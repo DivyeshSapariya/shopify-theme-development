@@ -129,8 +129,8 @@
       "settings": {
         "container_width": "boxed",
         "layout_type": "flex",
-        "direction": "row",
-        "direction_tablet": "row",
+        "direction": "column",
+        "direction_tablet": "column",
         "direction_mobile": "column",
         "justify_content": "center",
         "align_items": "center",
