@@ -1,6 +1,7 @@
 {
   "sections": {
-    "hero": { "type": "hero" }
+    "hero": { "type": "hero" },
+    "feature-grid": { "type": "feature-grid" }
   },
-  "order": ["hero"]
+  "order": ["hero", "feature-grid"]
 }

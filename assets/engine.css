@@ -28,3 +28,57 @@
   color: var(--theme-muted);
   margin: 0;
 }
+
+/* ==========================================================================
+   FEATURE GRID (first section using blocks)
+   ========================================================================== */
+.theme-feature-grid-section {
+  padding-top: var(--pt, var(--theme-space-lg));
+  padding-bottom: var(--pb, var(--theme-space-lg));
+  background: var(--bg, var(--theme-secondary));
+}
+
+.theme-feature-grid-section__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--theme-space-md);
+}
+
+.theme-feature-grid-section__heading {
+  font-size: 28px;
+  text-align: center;
+  margin: 0 0 var(--theme-space-md) 0;
+  color: var(--theme-text);
+}
+
+.theme-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 3), 1fr);
+  gap: var(--theme-space-md);
+}
+
+.theme-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--theme-space-xs);
+}
+
+.theme-feature__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.theme-feature__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--theme-text);
+}
+
+.theme-feature__text {
+  font-size: 15px;
+  color: var(--theme-muted);
+  margin: 0;
+}
