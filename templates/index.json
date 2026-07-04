@@ -133,7 +133,7 @@
         "direction_tablet": "column",
         "direction_mobile": "column",
         "justify_content": "center",
-        "align_items": "center",
+        "align_items": "stretch",
         "gap": 16,
         "gap_tablet": 16,
         "gap_mobile": 16,
