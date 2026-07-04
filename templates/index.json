@@ -1,12 +1,14 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" }
-  },
-  "order": ["hero", "feature-grid", "product-grid"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
@@ -43,12 +45,39 @@
             "title": "Free shipping",
             "text": "On all orders over $50."
           }
+        },
+        "feature_K83XWg": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        },
+        "feature_bhb7M4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        },
+        "feature_E98nDG": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
         }
       },
       "block_order": [
         "feature_HHcfqX",
         "feature_QTWGAr",
-        "feature_UMNhwG"
+        "feature_UMNhwG",
+        "feature_K83XWg",
+        "feature_bhb7M4",
+        "feature_E98nDG"
       ],
       "name": "Feature grid",
       "settings": {
@@ -58,11 +87,24 @@
         "padding_top": 80,
         "padding_bottom": 80
       }
+    },
+    "product_grid_Y4PjN8": {
+      "type": "product-grid",
+      "name": "Product grid",
+      "settings": {
+        "heading": "Featured products",
+        "collection": "automated-collection",
+        "products_to_show": 5,
+        "columns": 5,
+        "bg_color": "#FFFFFF",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
     "hero",
-    "feature_grid_iwK4cY"
+    "feature_grid_iwK4cY",
+    "product_grid_Y4PjN8"
   ]
->>>>>>> 1a300f87d891964709ddca8fca35144bf0640b3b
 }
