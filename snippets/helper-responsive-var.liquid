@@ -1,23 +1,53 @@
 {% comment %}
-  Outputs responsive CSS variable declarations for one property.
+  Outputs responsive CSS custom property declarations.
+  Uses helper-setting-value for reliable reads from section/block settings.
 {% endcomment %}
 {%- liquid
   assign tablet_key = setting_key | append: '_tablet'
   assign mobile_key = setting_key | append: '_mobile'
 
-  assign desktop_raw = settings[setting_key]
-  assign tablet_raw = settings[tablet_key]
-  assign mobile_raw = settings[mobile_key]
+  assign desktop_raw = ''
+  unless desktop == blank
+    assign desktop_raw = desktop | append: ''
+  else
+    capture desktop_raw
+      render 'helper-setting-value', settings: settings, key: setting_key
+    endcapture
+    assign desktop_raw = desktop_raw | strip
+  endunless
+
+  assign tablet_raw = ''
+  unless tablet == blank
+    assign tablet_raw = tablet | append: ''
+  else
+    capture tablet_raw
+      render 'helper-setting-value', settings: settings, key: tablet_key
+    endcapture
+    assign tablet_raw = tablet_raw | strip
+  endunless
+
+  assign mobile_raw = ''
+  unless mobile == blank
+    assign mobile_raw = mobile | append: ''
+  else
+    capture mobile_raw
+      render 'helper-setting-value', settings: settings, key: mobile_key
+    endcapture
+    assign mobile_raw = mobile_raw | strip
+  endunless
 -%}
 {%- if desktop_raw != blank -%}
-  {%- capture desktop_val -%}{% render 'helper-sanitize-value', value: desktop_raw, unit: unit %}{%- endcapture -%}
+  {%- capture desktop_val -%}{%- render 'helper-sanitize-value', value: desktop_raw, unit: unit -%}{%- endcapture -%}
+  {%- assign desktop_val = desktop_val | strip -%}
   --{{ css_var }}: {{ desktop_val }};
 {%- endif -%}
 {%- if tablet_raw != blank -%}
-  {%- capture tablet_val -%}{% render 'helper-sanitize-value', value: tablet_raw, unit: unit %}{%- endcapture -%}
+  {%- capture tablet_val -%}{%- render 'helper-sanitize-value', value: tablet_raw, unit: unit -%}{%- endcapture -%}
+  {%- assign tablet_val = tablet_val | strip -%}
   --{{ css_var }}-tablet: {{ tablet_val }};
 {%- endif -%}
 {%- if mobile_raw != blank -%}
-  {%- capture mobile_val -%}{% render 'helper-sanitize-value', value: mobile_raw, unit: unit %}{%- endcapture -%}
+  {%- capture mobile_val -%}{%- render 'helper-sanitize-value', value: mobile_raw, unit: unit -%}{%- endcapture -%}
+  {%- assign mobile_val = mobile_val | strip -%}
   --{{ css_var }}-mobile: {{ mobile_val }};
 {%- endif -%}

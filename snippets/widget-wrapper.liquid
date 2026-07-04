@@ -1,27 +1,24 @@
 {% comment %}
-  Widget wrapper — scoped variables + complete HTML shell.
+  Widget wrapper — scoped CSS variables on element + HTML shell.
 {% endcomment %}
 {%- liquid
   assign widget_type = widget_type | default: block.type
+
   capture uid
     render 'helper-unique-id', source: block.id
   endcapture
-  capture scope_selector
-    echo '.builder-widget--' | append: uid
-  endcapture
+  assign uid = uid | strip
+
   capture modifier_classes
     render 'helper-visibility-classes', settings: block.settings
     render 'helper-animation-classes', settings: block.settings
   endcapture
+  assign modifier_classes = modifier_classes | strip
+
   capture widget_classes
     render 'helper-class-builder', base: 'builder-widget', uid: uid, custom_class: block.settings.css_class, extra_classes: modifier_classes
   endcapture
--%}
-
-{%- render 'engine-variable',
-  settings: block.settings,
-  scope_selector: scope_selector,
-  component_type: 'widget'
+  assign widget_classes = widget_classes | strip
 -%}
 
 <div
@@ -29,6 +26,7 @@
   data-builder-id="{{ uid }}"
   data-builder-type="{{ widget_type }}"
   data-builder-widget="{{ widget_type }}"
+  {% render 'engine-variable', settings: block.settings, component_type: 'widget' %}
   {% render 'helper-attribute-builder', settings: block.settings %}
   {{ block.shopify_attributes }}
 >

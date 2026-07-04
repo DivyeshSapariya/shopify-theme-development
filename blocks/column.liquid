@@ -3,25 +3,22 @@
 {% endcomment %}
 
 {%- capture uid -%}{%- render 'helper-unique-id', source: block.id -%}{%- endcapture -%}
-{%- capture scope_selector -%}.builder-column--{{ uid }}{%- endcapture -%}
+{%- assign uid = uid | strip -%}
 {%- capture modifier_classes -%}
   {%- render 'helper-visibility-classes', settings: block.settings -%}
   {%- render 'helper-animation-classes', settings: block.settings -%}
 {%- endcapture -%}
+{%- assign modifier_classes = modifier_classes | strip -%}
 {%- capture column_classes -%}
   {%- render 'helper-class-builder', base: 'builder-column', uid: uid, custom_class: block.settings.css_class, extra_classes: modifier_classes -%}
 {%- endcapture -%}
-
-{%- render 'engine-variable',
-  settings: block.settings,
-  scope_selector: scope_selector,
-  component_type: 'column'
--%}
+{%- assign column_classes = column_classes | strip -%}
 
 <div
   class="{{ column_classes }}"
   data-builder-id="{{ uid }}"
   data-builder-type="column"
+  {% render 'engine-variable', settings: block.settings, component_type: 'column' %}
   {% render 'helper-attribute-builder', settings: block.settings %}
   {{ block.shopify_attributes }}
 >

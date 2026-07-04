@@ -1,0 +1,7 @@
+{% comment %}
+  Renders inline style attribute with CSS custom properties only.
+  @param variables {string} - e.g. --pt: 40px; --pb: 20px;
+{% endcomment %}
+{%- assign cleaned = variables | strip | replace: '
+', '' | replace: '  ', ' ' -%}
+{%- if cleaned != blank -%}style="{{ cleaned }}"{%- endif -%}

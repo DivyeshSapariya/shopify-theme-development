@@ -13,4 +13,16 @@ Canonical setting definitions for the Builder Framework. Shopify `{% schema %}` 
 | `advanced.json` | `helper-class-builder`, `helper-attribute-builder` |
 | `registry.json` | Setting ID → engine mapping |
 
-Group order: Content → Layout → Spacing → Background → Border → Animation → Visibility → Advanced
+## CSS variable output
+
+Engines output **CSS custom properties only** (never `padding-top: 40px`).
+
+Variables are applied on each element via inline `style`:
+
+```html
+<section class="builder-container builder-container--a1b2c" style="--pt: 40px; --gap: 24px;">
+```
+
+Global `engine.css` applies behavior: `padding-top: var(--pt)`.
+
+Setting reads use `helper-setting-value.liquid` (dot notation) — not `settings[key]`.

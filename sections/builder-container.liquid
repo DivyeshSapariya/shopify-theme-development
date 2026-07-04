@@ -3,7 +3,7 @@
 {% endcomment %}
 
 {%- capture uid -%}{%- render 'helper-unique-id', source: section.id -%}{%- endcapture -%}
-{%- capture scope_selector -%}.builder-container--{{ uid }}{%- endcapture -%}
+{%- assign uid = uid | strip -%}
 {%- liquid
   assign width_modifier = ''
   if section.settings.container_width == 'full'
@@ -21,21 +21,19 @@
   {%- render 'helper-visibility-classes', settings: section.settings -%}
   {%- render 'helper-animation-classes', settings: section.settings -%}
 {%- endcapture -%}
+{%- assign modifier_classes = modifier_classes | strip -%}
+
 {%- capture container_classes -%}
   {%- render 'helper-class-builder', base: 'builder-container', uid: uid, custom_class: section.settings.css_class, extra_classes: modifier_classes -%}
 {%- endcapture -%}
-
-{%- render 'engine-variable',
-  settings: section.settings,
-  scope_selector: scope_selector,
-  component_type: 'container'
--%}
+{%- assign container_classes = container_classes | strip -%}
 
 <section
   id="{{ section.settings.css_id | default: section.id }}"
   class="{{ container_classes }} {{ width_modifier }} u-relative"
   data-builder-id="{{ uid }}"
   data-builder-type="container"
+  {% render 'engine-variable', settings: section.settings, component_type: 'container' %}
   {% render 'helper-attribute-builder', settings: section.settings %}
   {{ section.shopify_attributes }}
 >

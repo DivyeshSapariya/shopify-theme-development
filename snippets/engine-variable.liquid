@@ -1,8 +1,8 @@
 {% comment %}
-  Variable Engine — orchestrates all style engines into scoped CSS variables.
+  Variable Engine — outputs CSS custom properties for scoped styling.
   @param settings {object}
-  @param scope_selector {string}
   @param component_type {string} - container | column | widget
+  @param return {string} - optional, set to 'vars' to output variable string only
 {% endcomment %}
 {%- capture css_variables -%}
   {%- render 'engine-spacing', settings: settings -%}
@@ -35,5 +35,10 @@
     {%- render 'helper-responsive-var', settings: settings, setting_key: 'width', css_var: 'width' -%}
   {%- endif -%}
 {%- endcapture -%}
-
-{%- render 'helper-style-builder', selector: scope_selector, variables: css_variables -%}
+{%- assign css_variables = css_variables | strip | replace: '
+', '' -%}
+{%- if return == 'vars' -%}
+  {{- css_variables -}}
+{%- else -%}
+  {%- render 'helper-var-attribute', variables: css_variables -%}
+{%- endif -%}
