@@ -1,8 +1,0 @@
-{% comment %}
-  Visibility Engine — visibility CSS variables.
-  @param settings {object}
-{% endcomment %}
-{%- if settings.visibility != blank -%}
-  --visibility: {{ settings.visibility }};
-{%- endif -%}
-{%- render 'helper-responsive-var', settings: settings, setting_key: 'display', css_var: 'display', unit: '' -%}

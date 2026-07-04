@@ -1,0 +1,4 @@
+[environments.default]
+store = "themedevelopment-2jtznnvd.myshopify.com"
+# Required while storefront is password-protected (Online Store → Preferences):
+# store-password = "YOUR_STOREFRONT_PASSWORD"

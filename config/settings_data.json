@@ -1,7 +1,6 @@
 {
   "current": {
-    "color_primary": "#1a1a1a",
-    "color_secondary": "#666666",
-    "color_background": "#ffffff"
+    "color_background": "#ffffff",
+    "color_text": "#1a1a1a"
   }
 }

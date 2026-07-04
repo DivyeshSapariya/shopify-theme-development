@@ -1,8 +1,8 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Shopify Builder Framework",
-    "theme_version": "0.1.0",
+    "theme_name": "Custom Theme",
+    "theme_version": "1.0.0",
     "theme_author": "Divyesh Sapariya",
     "theme_documentation_url": "https://github.com/DivyeshSapariya/shopify-theme-development",
     "theme_support_url": "https://github.com/DivyeshSapariya/shopify-theme-development/issues"
@@ -12,38 +12,15 @@
     "settings": [
       {
         "type": "color",
-        "id": "color_primary",
-        "label": "Primary color",
-        "default": "#1a1a1a"
-      },
-      {
-        "type": "color",
-        "id": "color_secondary",
-        "label": "Secondary color",
-        "default": "#666666"
-      },
-      {
-        "type": "color",
         "id": "color_background",
-        "label": "Background color",
+        "label": "Background",
         "default": "#ffffff"
-      }
-    ]
-  },
-  {
-    "name": "Typography",
-    "settings": [
-      {
-        "type": "font_picker",
-        "id": "font_body",
-        "label": "Body font",
-        "default": "assistant_n4"
       },
       {
-        "type": "font_picker",
-        "id": "font_heading",
-        "label": "Heading font",
-        "default": "assistant_n4"
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#1a1a1a"
       }
     ]
   }

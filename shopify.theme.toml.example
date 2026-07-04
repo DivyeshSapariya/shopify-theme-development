@@ -1,0 +1,7 @@
+# Shopify CLI environment config
+# 1. Copy this file to shopify.theme.toml
+# 2. Replace YOUR_STORE with your dev store name (from admin URL)
+# 3. Run: shopify theme dev
+
+[environments.default]
+store = "YOUR_STORE.myshopify.com"

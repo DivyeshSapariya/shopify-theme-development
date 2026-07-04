@@ -1,34 +1,26 @@
-# Shopify Builder Framework Theme
+# Custom Shopify Theme
 
-Modular Shopify Online Store 2.0 theme implementing the Builder Framework specification.
-
-## Documentation
-
-- **Development plan:** `DEVELOPMENT_PLAN.md`
-- **Full specification:** `../md-files/` (docs 01–24)
+Blank theme scaffold — ready to build from scratch.
 
 ## Structure
 
 ```
-assets/          CSS, JS
-blocks/          Widget & column theme blocks
-config/          Theme settings
-layout/          theme.liquid, password.liquid
-locales/         Translations
-sections/        Builder container, header, footer
-snippets/        helper-*, engine-*, widget-wrapper
-config/schema/   Reusable schema JSON fragments (source of truth)
-templates/       JSON templates
+layout/       theme.liquid, password.liquid
+sections/     main.liquid (placeholder)
+templates/    JSON templates
+assets/       base.css
+config/       theme settings
 ```
 
 ## Local development
 
 ```bash
-npm install -g @shopify/cli @shopify/theme
-shopify auth login
-shopify theme dev --store YOUR_STORE.myshopify.com
+cd shopify-theme-development
+shopify theme dev
 ```
 
-## Architecture
+Store config is in `shopify.theme.toml`.
 
-Container → Column → Widget, with shared engines for styling, responsive, and animation.
+## Next steps
+
+Build one section at a time. Add blocks, snippets, and styles as needed.

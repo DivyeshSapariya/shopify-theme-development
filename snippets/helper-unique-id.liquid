@@ -1,9 +1,0 @@
-{% comment %}
-  Generates a short unique ID from a Shopify section/block ID.
-  @param source {string} - section.id or block.id
-{% endcomment %}
-{%- if source != blank -%}
-  {{- source | md5 | slice: 0, 5 -}}
-{%- else -%}
-  {{- 'fallback' | append: 'now' | date: '%s' | md5 | slice: 0, 5 -}}
-{%- endif -%}
