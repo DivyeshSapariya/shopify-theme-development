@@ -1,31 +1,21 @@
 <!doctype html>
 <html lang="{{ request.locale.iso_code }}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="{{ settings.color_background }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page_title }}</title>
 
-    <title>
-      {{ page_title }}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
+  {{ content_for_header }}
+</head>
+<body>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+  {% section 'header' %}
 
-    {{ content_for_header }}
+  <main id="MainContent">
+    {{ content_for_layout }}
+  </main>
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-  </head>
+  {% section 'footer' %}
 
-  <body class="template-{{ template.name }}">
-    {% sections 'header-group' %}
-
-    <main id="main-content" role="main">
-      {{ content_for_layout }}
-    </main>
-
-    {% sections 'footer-group' %}
-  </body>
+</body>
 </html>

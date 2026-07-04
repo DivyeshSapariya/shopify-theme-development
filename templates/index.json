@@ -1,56 +1,6 @@
 {
   "sections": {
-<<<<<<< HEAD
-    "main": {
-      "type": "main",
-      "settings": {
-        "heading": "Welcome",
-        "text": "Start building your theme from here."
-      }
-    }
+    "main": { "type": "placeholder" }
   },
   "order": ["main"]
-=======
-    "builder_container_kzACdM": {
-      "type": "builder-container",
-      "name": "Builder Container",
-      "settings": {
-        "container_width": "boxed",
-        "layout_type": "flex",
-        "direction": "row",
-        "direction_tablet": "row",
-        "direction_mobile": "column",
-        "justify_content": "flex-start",
-        "align_items": "stretch",
-        "gap": 24,
-        "gap_tablet": 20,
-        "gap_mobile": 16,
-        "inner_max_width": "1200",
-        "padding_top": 40,
-        "padding_top_tablet": 32,
-        "padding_top_mobile": 24,
-        "padding_bottom": 40,
-        "padding_left": 20,
-        "padding_right": 20,
-        "background_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "border_width": 0,
-        "border_color": "#e5e5e5",
-        "border_radius": 0,
-        "entrance_animation": "none",
-        "animation_duration": 0.6,
-        "hide_on_desktop": false,
-        "hide_on_tablet": false,
-        "hide_on_mobile": false,
-        "css_id": "",
-        "css_class": "",
-        "aria_label": ""
-      }
-    }
-  },
-  "order": [
-    "builder_container_kzACdM"
-  ]
->>>>>>> 2e893a4d0f6bd3ff31073d123624351a96b4052b
 }

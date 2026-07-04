@@ -1,27 +1,10 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Custom Theme",
-    "theme_version": "1.0.0",
-    "theme_author": "Divyesh Sapariya",
-    "theme_documentation_url": "https://github.com/DivyeshSapariya/shopify-theme-development",
-    "theme_support_url": "https://github.com/DivyeshSapariya/shopify-theme-development/issues"
-  },
-  {
-    "name": "Colors",
-    "settings": [
-      {
-        "type": "color",
-        "id": "color_background",
-        "label": "Background",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_text",
-        "label": "Text",
-        "default": "#1a1a1a"
-      }
-    ]
+    "theme_name": "Lumen",
+    "theme_version": "0.1.0",
+    "theme_author": "Divyesh",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
   }
 ]

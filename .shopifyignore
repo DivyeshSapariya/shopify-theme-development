@@ -1,5 +1,0 @@
-.git
-node_modules
-DEVELOPMENT_PLAN.md
-*.md
-!README.md
