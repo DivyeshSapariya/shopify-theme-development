@@ -1,7 +1,6 @@
 {
   "sections": {
-    "main": { "type": "placeholder" },
-    "test": { "type": "test-style-vars" }
+    "hero": { "type": "hero" }
   },
-  "order": ["main", "test"]
+  "order": ["hero"]
 }

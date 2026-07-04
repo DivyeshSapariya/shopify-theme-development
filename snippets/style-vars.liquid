@@ -1,13 +1,16 @@
 {%- comment -%}
   snippets/style-vars.liquid
   ------------------------------------------------------------------
-  This is the bridge: later, real section settings will flow through
-  here and come out as CSS variables. For THIS step, everything is
-  hardcoded on purpose — we're only testing that the snippet renders
-  correctly and can be called from a section. Real settings get wired
-  in during the next step (building hero.liquid).
+  The real bridge now: turns a section's settings into CSS variables.
+  Every section calls it the same way:
+    {% render 'style-vars', section: section %}
+
+  Falls back to sensible defaults if a setting is missing, so this
+  never breaks even on a section that doesn't define every setting.
   ------------------------------------------------------------------
 {%- endcomment -%}
---pt: 20px;
---pb: 20px;
---bg: #fceec1;
+--pt: {{ section.settings.padding_top | default: 40 }}px;
+--pb: {{ section.settings.padding_bottom | default: 40 }}px;
+{%- if section.settings.bg_color %}
+--bg: {{ section.settings.bg_color }};
+{%- endif %}

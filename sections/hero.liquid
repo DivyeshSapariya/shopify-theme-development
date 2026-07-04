@@ -1,0 +1,34 @@
+{%- comment -%}
+  sections/hero.liquid
+  ------------------------------------------------------------------
+  The first REAL section. Padding and background color are actual
+  Shopify settings — move the sliders in the editor and watch the
+  page change live. This proves the whole settings → variable → CSS
+  pipeline works end to end.
+  ------------------------------------------------------------------
+{%- endcomment -%}
+
+<section class="theme-hero" style="{% render 'style-vars', section: section %}">
+  <div class="theme-hero__inner">
+    {% if section.settings.heading != blank %}
+      <h1 class="theme-hero__heading">{{ section.settings.heading }}</h1>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="theme-hero__subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "Welcome to our store" },
+    { "id": "subheading", "type": "textarea", "label": "Subheading", "default": "This text sits inside the hero section." },
+    { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
+    { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}
