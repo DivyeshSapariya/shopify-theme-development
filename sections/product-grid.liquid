@@ -1,0 +1,51 @@
+{%- comment -%}
+  sections/product-grid.liquid
+  ------------------------------------------------------------------
+  Pulls real products from a merchant-selected collection. No blocks
+  needed here — Shopify's own collection/product objects supply the
+  repeatable items. Same style-vars pipeline as every other section.
+  ------------------------------------------------------------------
+{%- endcomment -%}
+
+<section class="theme-product-grid-section" style="{% render 'style-vars', section: section %} --columns: {{ section.settings.columns }};">
+  <div class="theme-product-grid-section__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="theme-product-grid-section__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% assign collection = collections[section.settings.collection] %}
+    <div class="theme-product-grid">
+      {% if collection != blank %}
+        {% for product in collection.products limit: section.settings.products_to_show %}
+          <a href="{{ product.url }}" class="theme-product-card">
+            <div class="theme-product-card__image-wrap">
+              {% if product.featured_image %}
+                <img class="theme-product-card__image" src="{{ product.featured_image | image_url: width: 500 }}" alt="{{ product.title | escape }}" loading="lazy">
+              {% endif %}
+            </div>
+            <p class="theme-product-card__title">{{ product.title }}</p>
+            <p class="theme-product-card__price">{{ product.price | money }}</p>
+          </a>
+        {% endfor %}
+      {% else %}
+        <p>Select a collection in the section settings to display products.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product grid",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "Featured products" },
+    { "id": "collection", "type": "collection", "label": "Collection" },
+    { "id": "products_to_show", "type": "range", "label": "Products to show", "min": 2, "max": 12, "default": 8 },
+    { "id": "columns", "type": "range", "label": "Columns", "min": 2, "max": 5, "default": 4 },
+    { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
+    { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "presets": [{ "name": "Product grid" }]
+}
+{% endschema %}
