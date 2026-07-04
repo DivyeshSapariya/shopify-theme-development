@@ -15,7 +15,7 @@
         "col_image": {
           "type": "column",
           "settings": {
-            "width": 100,
+            "width": 50,
             "width_tablet": 100,
             "width_mobile": 100,
             "order": 0,
@@ -56,7 +56,7 @@
         "col_content": {
           "type": "column",
           "settings": {
-            "width": 100,
+            "width": 50,
             "width_tablet": 100,
             "width_mobile": 100,
             "order": 0,
@@ -128,7 +128,7 @@
       ],
       "settings": {
         "container_width": "boxed",
-        "layout_type": "grid",
+        "layout_type": "flex",
         "direction": "row",
         "direction_tablet": "row",
         "direction_mobile": "column",
