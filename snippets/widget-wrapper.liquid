@@ -1,0 +1,34 @@
+{% comment %}
+  Widget wrapper — scoped variables + complete HTML shell.
+  @param block {block}
+  @param widget_type {string}
+  @param content {string} - captured widget HTML
+{% endcomment %}
+{%- liquid
+  assign widget_type = widget_type | default: block.type
+  capture uid
+    render 'helper-unique-id', source: block.id
+  endcapture
+  capture scope_selector
+    echo '.builder-widget--' | append: uid
+  endcapture
+  capture widget_classes
+    render 'helper-class-builder', base: 'builder-widget', uid: uid, custom_class: block.settings.css_class
+  endcapture
+-%}
+
+{%- render 'engine-variable',
+  settings: block.settings,
+  scope_selector: scope_selector,
+  component_type: 'widget'
+-%}
+
+<div
+  class="{{ widget_classes }} builder-{{ widget_type }}"
+  data-builder-id="{{ uid }}"
+  data-builder-type="{{ widget_type }}"
+  data-builder-widget="{{ widget_type }}"
+  {{ block.shopify_attributes }}
+>
+  {{ content }}
+</div>

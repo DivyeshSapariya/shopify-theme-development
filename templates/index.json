@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "builder-container",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

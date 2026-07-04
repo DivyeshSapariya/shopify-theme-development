@@ -1,0 +1,24 @@
+{% comment %}
+  Sanitizes a setting value for safe CSS output.
+  @param value {string|number}
+  @param unit {string} - default unit when value is unitless (default: px)
+{% endcomment %}
+{%- liquid
+  assign css_unit = unit | default: 'px'
+  assign sanitized = ''
+
+  if value == blank
+    assign sanitized = ''
+  elsif value contains 'px' or value contains '%' or value contains 'em' or value contains 'rem' or value contains 'vh' or value contains 'vw' or value contains 'deg' or value contains 'fr'
+    assign sanitized = value
+  elsif value contains '#'
+    assign sanitized = value
+  elsif value == 'auto' or value == 'none' or value == 'inherit' or value == 'transparent' or value == 'cover' or value == 'contain' or value == 'center' or value == 'row' or value == 'column' or value == 'wrap' or value == 'nowrap' or value == 'flex-start' or value == 'flex-end' or value == 'center' or value == 'stretch' or value == 'space-between' or value == 'space-around' or value == 'block' or value == 'flex' or value == 'grid' or value == 'hidden' or value == 'visible'
+    assign sanitized = value
+  elsif css_unit == blank
+    assign sanitized = value
+  else
+    assign sanitized = value | append: css_unit
+  endif
+-%}
+{{- sanitized -}}

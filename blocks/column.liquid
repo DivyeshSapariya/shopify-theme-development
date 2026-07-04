@@ -1,0 +1,123 @@
+{% comment %}
+  Column block — groups widgets. Layout only, no content.
+{% endcomment %}
+
+{%- capture uid -%}{%- render 'helper-unique-id', source: block.id -%}{%- endcapture -%}
+{%- capture scope_selector -%}.builder-column--{{ uid }}{%- endcapture -%}
+{%- capture column_classes -%}
+  {%- render 'helper-class-builder', base: 'builder-column', uid: uid, custom_class: block.settings.css_class -%}
+{%- endcapture -%}
+
+{%- render 'engine-variable',
+  settings: block.settings,
+  scope_selector: scope_selector,
+  component_type: 'column'
+-%}
+
+<div
+  class="{{ column_classes }}"
+  data-builder-id="{{ uid }}"
+  data-builder-type="column"
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Column",
+  "blocks": [
+    { "type": "heading" },
+    { "type": "paragraph" },
+    { "type": "button" },
+    { "type": "image" }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Width",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "width_tablet",
+      "label": "Width (tablet)",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "width_mobile",
+      "label": "Width (mobile)",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "order",
+      "label": "Order",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "order_mobile",
+      "label": "Order (mobile)",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS class"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+{%- capture widget_body -%}
+  <div class="builder-paragraph__content">
+    {{ block.settings.text }}
+  </div>
+{%- endcapture -%}
+
+{% render 'widget-wrapper', block: block, widget_type: 'paragraph', content: widget_body %}
+
+{% schema %}
+{
+  "name": "Paragraph",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Add your text here.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS class"
+    }
+  ]
+}
+{% endschema %}
