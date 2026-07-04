@@ -1,6 +1,7 @@
 {
   "sections": {
-    "main": { "type": "placeholder" }
+    "main": { "type": "placeholder" },
+    "test": { "type": "test-style-vars" }
   },
-  "order": ["main"]
+  "order": ["main", "test"]
 }
