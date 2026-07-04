@@ -15,7 +15,7 @@
         "col_image": {
           "type": "column",
           "settings": {
-            "width": 48,
+            "width": 33,
             "width_tablet": 100,
             "width_mobile": 100,
             "order": 0,
@@ -56,7 +56,7 @@
         "col_content": {
           "type": "column",
           "settings": {
-            "width": 48,
+            "width": 33,
             "width_tablet": 100,
             "width_mobile": 100,
             "order": 0,
@@ -120,15 +120,84 @@
             "hero_text",
             "hero_btn"
           ]
+        },
+        "column_r8kjjj": {
+          "type": "column",
+          "settings": {
+            "width": 33,
+            "width_tablet": 100,
+            "width_mobile": 100,
+            "order": 0,
+            "order_mobile": 0,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "background_color": "#c4c4c4",
+            "hide_on_desktop": false,
+            "hide_on_tablet": false,
+            "hide_on_mobile": false,
+            "css_class": "",
+            "aria_label": ""
+          },
+          "blocks": {
+            "heading_eiqeNL": {
+              "type": "heading",
+              "settings": {
+                "heading": "Build anything with Shopify Builder",
+                "heading_tag": "h1",
+                "link": "",
+                "font_size": 22,
+                "font_size_tablet": 40,
+                "font_size_mobile": 32,
+                "text_color": "#1a1a1a",
+                "css_class": ""
+              },
+              "blocks": {}
+            },
+            "paragraph_nbpeYy": {
+              "type": "paragraph",
+              "settings": {
+                "text": "<p>Create flexible layouts using containers, columns, and widgets — fully editable in the Theme Editor.</p>",
+                "font_size": 16,
+                "text_color": "#666666",
+                "entrance_animation": "fade_in",
+                "animation_duration": 0.6,
+                "animation_delay": 0,
+                "hide_on_desktop": false,
+                "hide_on_tablet": false,
+                "hide_on_mobile": false,
+                "css_class": "",
+                "aria_label": "",
+                "aria_hidden": false
+              },
+              "blocks": {}
+            },
+            "button_8nXGmU": {
+              "type": "button",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/all",
+                "background_color": "#1a1a1a",
+                "text_color": "#ffffff",
+                "css_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_eiqeNL",
+            "paragraph_nbpeYy",
+            "button_8nXGmU"
+          ]
         }
       },
       "block_order": [
         "col_image",
-        "col_content"
+        "col_content",
+        "column_r8kjjj"
       ],
       "settings": {
         "container_width": "boxed",
-        "layout_type": "flex",
+        "layout_type": "grid",
         "direction": "column",
         "direction_tablet": "column",
         "direction_mobile": "column",
