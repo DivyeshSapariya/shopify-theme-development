@@ -1,0 +1,34 @@
+/* ==========================================================================
+   variables.css — global design tokens
+   These are FALLBACK defaults. Later, section settings will override
+   specific ones per-instance (that comes in a later step).
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --theme-primary: #111111;
+  --theme-secondary: #ffffff;
+  --theme-accent: #d4a017;
+  --theme-text: #1a1a1a;
+  --theme-muted: #6b6b6b;
+  --theme-border: #e5e5e5;
+
+  /* Spacing scale */
+  --theme-space-xs: 8px;
+  --theme-space-sm: 16px;
+  --theme-space-md: 24px;
+  --theme-space-lg: 48px;
+  --theme-space-xl: 80px;
+
+  /* Radius */
+  --theme-radius-sm: 4px;
+  --theme-radius-md: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--theme-text);
+  margin: 0;
+}
