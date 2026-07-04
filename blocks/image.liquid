@@ -1,0 +1,67 @@
+{%- capture widget_body -%}
+  {%- if block.settings.image != blank -%}
+    {%- if block.settings.link != blank -%}
+      <a href="{{ block.settings.link }}" class="builder-image__link">
+        {{
+          block.settings.image
+          | image_url: width: 1600
+          | image_tag:
+            class: 'builder-image__img',
+            loading: 'lazy',
+            widths: '375, 550, 750, 1100, 1500',
+            alt: block.settings.image.alt | default: block.settings.alt_text
+        }}
+      </a>
+    {%- else -%}
+      {{
+        block.settings.image
+        | image_url: width: 1600
+        | image_tag:
+          class: 'builder-image__img',
+          loading: 'lazy',
+          widths: '375, 550, 750, 1100, 1500',
+          alt: block.settings.image.alt | default: block.settings.alt_text
+      }}
+    {%- endif -%}
+  {%- else -%}
+    <div class="builder-image__placeholder" role="img" aria-label="{{ block.settings.alt_text | default: 'Image placeholder' | escape }}"></div>
+  {%- endif -%}
+{%- endcapture -%}
+
+{% render 'widget-wrapper', block: block, widget_type: 'image', content: widget_body %}
+
+{% schema %}
+{
+  "name": "Image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS class"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,115 @@
+/* Responsive overrides — framework breakpoints only, no widget-specific queries */
+
+/* Tablet: max-width 991px */
+@media screen and (max-width: 991px) {
+  .builder-container,
+  .builder-column,
+  .builder-widget {
+    padding-top: var(--pt-tablet, var(--pt, 0));
+    padding-right: var(--pr-tablet, var(--pr, 0));
+    padding-bottom: var(--pb-tablet, var(--pb, 0));
+    padding-left: var(--pl-tablet, var(--pl, 0));
+    margin-top: var(--mt-tablet, var(--mt, 0));
+    margin-right: var(--mr-tablet, var(--mr, 0));
+    margin-bottom: var(--mb-tablet, var(--mb, 0));
+    margin-left: var(--ml-tablet, var(--ml, 0));
+    font-size: var(--fs-tablet, var(--fs, inherit));
+    font-weight: var(--fw-tablet, var(--fw, inherit));
+    line-height: var(--lh-tablet, var(--lh, inherit));
+    letter-spacing: var(--ls-tablet, var(--ls, normal));
+    text-align: var(--ta-tablet, var(--ta, inherit));
+    color: var(--color-tablet, var(--color, inherit));
+    width: var(--width-tablet, var(--width, auto));
+    max-width: var(--max-width-tablet, var(--max-width, none));
+    min-height: var(--min-height-tablet, var(--min-height, 0));
+    opacity: var(--opacity-tablet, var(--opacity, 1));
+    order: var(--order-tablet, var(--order, 0));
+    visibility: var(--visibility-tablet, var(--visibility, visible));
+  }
+
+  .builder-container__inner {
+    flex-direction: var(--direction-tablet, var(--direction, row));
+    justify-content: var(--justify-tablet, var(--justify, flex-start));
+    align-items: var(--align-tablet, var(--align, stretch));
+    gap: var(--gap-tablet, var(--gap, var(--builder-gap)));
+  }
+
+  .builder-column {
+    flex-grow: var(--grow-tablet, var(--grow, 1));
+    flex-basis: var(--basis-tablet, var(--basis, auto));
+    align-self: var(--align-self-tablet, var(--align-self, auto));
+  }
+
+  .is-hidden-tablet {
+    display: none !important;
+  }
+}
+
+/* Mobile: max-width 767px */
+@media screen and (max-width: 767px) {
+  .builder-container,
+  .builder-column,
+  .builder-widget {
+    padding-top: var(--pt-mobile, var(--pt-tablet, var(--pt, 0)));
+    padding-right: var(--pr-mobile, var(--pr-tablet, var(--pr, 0)));
+    padding-bottom: var(--pb-mobile, var(--pb-tablet, var(--pb, 0)));
+    padding-left: var(--pl-mobile, var(--pl-tablet, var(--pl, 0)));
+    margin-top: var(--mt-mobile, var(--mt-tablet, var(--mt, 0)));
+    margin-right: var(--mr-mobile, var(--mr-tablet, var(--mr, 0)));
+    margin-bottom: var(--mb-mobile, var(--mb-tablet, var(--mb, 0)));
+    margin-left: var(--ml-mobile, var(--ml-tablet, var(--ml, 0)));
+    font-size: var(--fs-mobile, var(--fs-tablet, var(--fs, inherit)));
+    font-weight: var(--fw-mobile, var(--fw-tablet, var(--fw, inherit)));
+    line-height: var(--lh-mobile, var(--lh-tablet, var(--lh, inherit)));
+    letter-spacing: var(--ls-mobile, var(--ls-tablet, var(--ls, normal)));
+    text-align: var(--ta-mobile, var(--ta-tablet, var(--ta, inherit)));
+    color: var(--color-mobile, var(--color-tablet, var(--color, inherit)));
+    width: var(--width-mobile, var(--width-tablet, var(--width, auto)));
+    max-width: var(--max-width-mobile, var(--max-width-tablet, var(--max-width, none)));
+    min-height: var(--min-height-mobile, var(--min-height-tablet, var(--min-height, 0)));
+    opacity: var(--opacity-mobile, var(--opacity-tablet, var(--opacity, 1)));
+    order: var(--order-mobile, var(--order-tablet, var(--order, 0)));
+    visibility: var(--visibility-mobile, var(--visibility-tablet, var(--visibility, visible)));
+  }
+
+  .builder-container__inner {
+    flex-direction: var(--direction-mobile, var(--direction-tablet, var(--direction, row)));
+    justify-content: var(--justify-mobile, var(--justify-tablet, var(--justify, flex-start)));
+    align-items: var(--align-mobile, var(--align-tablet, var(--align, stretch)));
+    gap: var(--gap-mobile, var(--gap-tablet, var(--gap, var(--builder-gap))));
+  }
+
+  .builder-column {
+    flex-grow: var(--grow-mobile, var(--grow-tablet, var(--grow, 1)));
+    flex-basis: var(--basis-mobile, var(--basis-tablet, var(--basis, auto)));
+    align-self: var(--align-self-mobile, var(--align-self-tablet, var(--align-self, auto)));
+  }
+
+  .is-hidden-mobile {
+    display: none !important;
+  }
+}
+
+/* Desktop visibility */
+@media screen and (min-width: 992px) {
+  .is-hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* Display overrides per device */
+@media screen and (max-width: 991px) {
+  .builder-container[data-display-tablet],
+  .builder-column[data-display-tablet],
+  .builder-widget[data-display-tablet] {
+    display: var(--display-tablet, var(--display, block));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .builder-container[data-display-mobile],
+  .builder-column[data-display-mobile],
+  .builder-widget[data-display-mobile] {
+    display: var(--display-mobile, var(--display-tablet, var(--display, block)));
+  }
+}

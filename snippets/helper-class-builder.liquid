@@ -1,0 +1,11 @@
+{% comment %}
+  Builds a space-separated class string.
+{% endcomment %}
+{%- liquid
+  assign class_list = base | append: ' ' | append: base | append: '--' | append: uid
+
+  if custom_class != blank
+    assign class_list = class_list | append: ' ' | append: custom_class
+  endif
+-%}
+{{- class_list -}}

@@ -1,0 +1,52 @@
+{% comment %}
+  Variable Engine — converts settings to scoped CSS variables.
+  @param settings {object}
+  @param scope_selector {string}
+  @param component_type {string} - container | column | widget
+{% endcomment %}
+{%- capture css_variables -%}
+  {%- render 'engine-spacing', settings: settings -%}
+
+  {%- if component_type == 'container' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'direction', css_var: 'direction', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'wrap', css_var: 'wrap', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'justify_content', css_var: 'justify', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'align_items', css_var: 'align', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'width', css_var: 'width' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'max_width', css_var: 'max-width' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'min_height', css_var: 'min-height' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'inner_max_width', css_var: 'inner-max-width' -%}
+    {%- if settings.background_color != blank -%}
+      --bg: {{ settings.background_color }};
+    {%- endif -%}
+    {%- if settings.border_radius != blank -%}
+      {%- capture radius_val -%}{% render 'helper-sanitize-value', value: settings.border_radius %}{%- endcapture -%}
+      --radius: {{ radius_val }};
+    {%- endif -%}
+  {%- elsif component_type == 'column' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'width', css_var: 'width', unit: '%' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'max_width', css_var: 'max-width', unit: '%' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'grow', css_var: 'grow', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'shrink', css_var: 'shrink', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'basis', css_var: 'basis' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'order', css_var: 'order', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'align_self', css_var: 'align-self', unit: '' -%}
+    {%- if settings.background_color != blank -%}
+      --bg: {{ settings.background_color }};
+    {%- endif -%}
+  {%- elsif component_type == 'widget' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'font_size', css_var: 'fs' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'font_weight', css_var: 'fw', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'line_height', css_var: 'lh', unit: '' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'letter_spacing', css_var: 'ls' -%}
+    {%- render 'helper-responsive-var', settings: settings, setting_key: 'text_align', css_var: 'ta', unit: '' -%}
+    {%- if settings.text_color != blank -%}
+      --color: {{ settings.text_color }};
+    {%- endif -%}
+    {%- if settings.background_color != blank -%}
+      --bg: {{ settings.background_color }};
+    {%- endif -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- render 'helper-style-builder', selector: scope_selector, variables: css_variables -%}

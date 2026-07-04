@@ -1,0 +1,168 @@
+/* Reusable animations — class-based, never inline */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Fade */
+@keyframes builder-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes builder-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.builder-animate--fade-in {
+  animation-name: builder-fade-in;
+  animation-duration: var(--duration, var(--builder-duration));
+  animation-delay: var(--delay, var(--builder-delay));
+  animation-timing-function: var(--timing, var(--builder-timing));
+  animation-fill-mode: var(--fill-mode, both);
+}
+
+.builder-animate--fade-out {
+  animation-name: builder-fade-out;
+}
+
+/* Slide */
+@keyframes builder-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes builder-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes builder-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes builder-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.builder-animate--slide-up { animation-name: builder-slide-up; }
+.builder-animate--slide-down { animation-name: builder-slide-down; }
+.builder-animate--slide-left { animation-name: builder-slide-left; }
+.builder-animate--slide-right { animation-name: builder-slide-right; }
+
+/* Zoom */
+@keyframes builder-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes builder-zoom-out {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.builder-animate--zoom-in { animation-name: builder-zoom-in; }
+.builder-animate--zoom-out { animation-name: builder-zoom-out; }
+
+/* Bounce */
+@keyframes builder-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.builder-animate--bounce-in { animation-name: builder-bounce-in; }
+
+/* Rotate */
+@keyframes builder-rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+.builder-animate--rotate-in { animation-name: builder-rotate-in; }
+
+/* Flip */
+@keyframes builder-flip-in {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateY(0);
+  }
+}
+
+.builder-animate--flip-in { animation-name: builder-flip-in; }
+
+/* Shared animation defaults for all animate classes */
+[class*="builder-animate--"] {
+  animation-duration: var(--duration, var(--builder-duration));
+  animation-delay: var(--delay, var(--builder-delay));
+  animation-timing-function: var(--timing, var(--builder-timing));
+  animation-fill-mode: var(--fill-mode, both);
+  animation-iteration-count: var(--iteration, 1);
+}

@@ -1,0 +1,10 @@
+{% comment %}
+  Wraps CSS variable declarations in a scoped style block.
+{% endcomment %}
+{%- if variables != blank and selector != blank -%}
+<style>
+  {{ selector }} {
+    {{ variables }}
+  }
+</style>
+{%- endif -%}
