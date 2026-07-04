@@ -1,0 +1,25 @@
+{% comment %}
+  Background Engine — background and overlay variables only.
+  @param settings {object}
+{% endcomment %}
+{%- if settings.background_color != blank -%}
+  --bg: {{ settings.background_color }};
+{%- endif -%}
+{%- if settings.hover_bg != blank -%}
+  --hover-bg: {{ settings.hover_bg }};
+{%- endif -%}
+{%- if settings.background_image != blank -%}
+  --bg-image: url({{ settings.background_image | image_url: width: 2000 }});
+{%- endif -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'background_size', css_var: 'bg-size', unit: '' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'background_position', css_var: 'bg-position', unit: '' -%}
+{%- if settings.background_repeat != blank -%}
+  --bg-repeat: {{ settings.background_repeat }};
+{%- endif -%}
+{%- if settings.overlay_color != blank -%}
+  --overlay: {{ settings.overlay_color }};
+{%- endif -%}
+{%- if settings.overlay_opacity != blank -%}
+  {%- capture overlay_opacity -%}{% render 'helper-sanitize-value', value: settings.overlay_opacity, unit: '' %}{%- endcapture -%}
+  --overlay-opacity: {{ overlay_opacity }};
+{%- endif -%}

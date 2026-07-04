@@ -1,0 +1,48 @@
+<div class="builder-main-product page-width">
+  <div class="builder-main-product__grid u-grid">
+    <div class="builder-main-product__media">
+      {%- if product.featured_media -%}
+        {{
+          product.featured_media
+          | image_url: width: 1200
+          | image_tag:
+            class: 'builder-main-product__image',
+            loading: 'eager',
+            widths: '400, 600, 800, 1000, 1200',
+            alt: product.featured_media.alt | default: product.title
+        }}
+      {%- endif -%}
+    </div>
+
+    <div class="builder-main-product__info">
+      <h1 class="builder-main-product__title">{{ product.title | escape }}</h1>
+      <p class="builder-main-product__price">{{ product.price | money }}</p>
+
+      {%- form 'product', product, class: 'builder-main-product__form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" name="add" class="builder-button u-focus-ring" {% unless product.available %}disabled{% endunless %}>
+          {%- if product.available -%}
+            {{ 'products.product.add_to_cart' | t }}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- endif -%}
+        </button>
+      {%- endform -%}
+
+      {%- if product.description != blank -%}
+        <div class="builder-main-product__description">
+          {{ product.description }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product information",
+  "tag": "section",
+  "class": "builder-main-product-section",
+  "settings": []
+}
+{% endschema %}

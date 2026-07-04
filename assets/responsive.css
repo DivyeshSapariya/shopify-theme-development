@@ -25,6 +25,7 @@
     opacity: var(--opacity-tablet, var(--opacity, 1));
     order: var(--order-tablet, var(--order, 0));
     visibility: var(--visibility-tablet, var(--visibility, visible));
+    height: var(--height-tablet, var(--height, auto));
   }
 
   .builder-container__inner {
@@ -70,6 +71,7 @@
     opacity: var(--opacity-mobile, var(--opacity-tablet, var(--opacity, 1)));
     order: var(--order-mobile, var(--order-tablet, var(--order, 0)));
     visibility: var(--visibility-mobile, var(--visibility-tablet, var(--visibility, visible)));
+    height: var(--height-mobile, var(--height-tablet, var(--height, auto)));
   }
 
   .builder-container__inner {

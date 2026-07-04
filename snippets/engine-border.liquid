@@ -1,0 +1,19 @@
+{% comment %}
+  Border Engine — border and radius variables only.
+  @param settings {object}
+{% endcomment %}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'border_width', css_var: 'border-width' -%}
+{%- if settings.border_style != blank -%}
+  --border-style: {{ settings.border_style }};
+{%- endif -%}
+{%- if settings.border_color != blank -%}
+  --border-color: {{ settings.border_color }};
+{%- endif -%}
+{%- if settings.hover_border != blank -%}
+  --hover-border: {{ settings.hover_border }};
+{%- endif -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'border_radius', css_var: 'radius' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'radius_tl', css_var: 'radius-tl' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'radius_tr', css_var: 'radius-tr' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'radius_br', css_var: 'radius-br' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'radius_bl', css_var: 'radius-bl' -%}

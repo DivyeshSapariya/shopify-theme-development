@@ -1,0 +1,13 @@
+{% comment %}
+  Builds accessibility and custom HTML attributes.
+  @param settings {object}
+{% endcomment %}
+{%- if settings.aria_label != blank -%}
+  aria-label="{{ settings.aria_label | escape }}"
+{%- endif -%}
+{%- if settings.aria_hidden == true -%}
+  aria-hidden="true"
+{%- endif -%}
+{%- if settings.custom_attributes != blank -%}
+  {{ settings.custom_attributes }}
+{%- endif -%}

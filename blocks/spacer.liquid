@@ -1,56 +1,43 @@
-{%- liquid
-  assign button_label = block.settings.label | default: 'Button'
-  assign button_link = block.settings.link | default: '#'
--%}
-
 {%- capture widget_body -%}
-  <a href="{{ button_link }}" class="builder-button__link u-focus-ring">
-    {{ button_label | escape }}
-  </a>
+  <span class="u-visually-hidden">{{ 'accessibility.spacer' | t }}</span>
 {%- endcapture -%}
 
-{% render 'widget-wrapper', block: block, widget_type: 'button', content: widget_body %}
+{% render 'widget-wrapper', block: block, widget_type: 'spacer', content: widget_body %}
 
 {% schema %}
 {
-  "name": "Button",
+  "name": "Spacer",
   "settings": [
+    { "type": "header", "content": "Layout" },
     {
-      "type": "header",
-      "content": "Content"
+      "type": "range",
+      "id": "height",
+      "label": "Height",
+      "min": 8,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     },
     {
-      "type": "text",
-      "id": "label",
-      "label": "Label",
-      "default": "Button"
+      "type": "range",
+      "id": "height_tablet",
+      "label": "Height (tablet)",
+      "min": 8,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 24
     },
     {
-      "type": "url",
-      "id": "link",
-      "label": "Link"
-    },
-    {
-      "type": "header",
-      "content": "Style"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Height (mobile)",
+      "min": 8,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 16
     },
     { "type": "header", "content": "Animation" },
     {
@@ -60,8 +47,7 @@
       "default": "none",
       "options": [
         { "value": "none", "label": "None" },
-        { "value": "fade_in", "label": "Fade in" },
-        { "value": "slide_up", "label": "Slide up" }
+        { "value": "fade_in", "label": "Fade in" }
       ]
     },
     {
@@ -104,16 +90,8 @@
       "default": false
     },
     { "type": "header", "content": "Advanced" },
-    {
-      "type": "text",
-      "id": "css_class",
-      "label": "CSS class"
-    },
-    {
-      "type": "text",
-      "id": "aria_label",
-      "label": "ARIA label"
-    },
+    { "type": "text", "id": "css_class", "label": "CSS class" },
+    { "type": "text", "id": "aria_label", "label": "ARIA label" },
     {
       "type": "checkbox",
       "id": "aria_hidden",

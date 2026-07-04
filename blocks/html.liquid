@@ -1,56 +1,21 @@
-{%- liquid
-  assign button_label = block.settings.label | default: 'Button'
-  assign button_link = block.settings.link | default: '#'
--%}
-
 {%- capture widget_body -%}
-  <a href="{{ button_link }}" class="builder-button__link u-focus-ring">
-    {{ button_label | escape }}
-  </a>
+  <div class="builder-html__content">
+    {{ block.settings.html }}
+  </div>
 {%- endcapture -%}
 
-{% render 'widget-wrapper', block: block, widget_type: 'button', content: widget_body %}
+{% render 'widget-wrapper', block: block, widget_type: 'html', content: widget_body %}
 
 {% schema %}
 {
-  "name": "Button",
+  "name": "HTML",
   "settings": [
+    { "type": "header", "content": "Content" },
     {
-      "type": "header",
-      "content": "Content"
-    },
-    {
-      "type": "text",
-      "id": "label",
-      "label": "Label",
-      "default": "Button"
-    },
-    {
-      "type": "url",
-      "id": "link",
-      "label": "Link"
-    },
-    {
-      "type": "header",
-      "content": "Style"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
+      "type": "html",
+      "id": "html",
+      "label": "HTML",
+      "default": "<p>Custom HTML content</p>"
     },
     { "type": "header", "content": "Animation" },
     {
@@ -60,8 +25,7 @@
       "default": "none",
       "options": [
         { "value": "none", "label": "None" },
-        { "value": "fade_in", "label": "Fade in" },
-        { "value": "slide_up", "label": "Slide up" }
+        { "value": "fade_in", "label": "Fade in" }
       ]
     },
     {
@@ -104,16 +68,8 @@
       "default": false
     },
     { "type": "header", "content": "Advanced" },
-    {
-      "type": "text",
-      "id": "css_class",
-      "label": "CSS class"
-    },
-    {
-      "type": "text",
-      "id": "aria_label",
-      "label": "ARIA label"
-    },
+    { "type": "text", "id": "css_class", "label": "CSS class" },
+    { "type": "text", "id": "aria_label", "label": "ARIA label" },
     {
       "type": "checkbox",
       "id": "aria_hidden",

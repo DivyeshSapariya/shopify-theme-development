@@ -1,0 +1,40 @@
+[
+  { "type": "header", "content": "Background" },
+  {
+    "type": "color",
+    "id": "background_color",
+    "label": "Background color",
+    "default": "transparent"
+  },
+  {
+    "type": "image_picker",
+    "id": "background_image",
+    "label": "Background image"
+  },
+  {
+    "type": "select",
+    "id": "background_size",
+    "label": "Background size",
+    "default": "cover",
+    "options": [
+      { "value": "cover", "label": "Cover" },
+      { "value": "contain", "label": "Contain" },
+      { "value": "auto", "label": "Auto" }
+    ]
+  },
+  {
+    "type": "color",
+    "id": "overlay_color",
+    "label": "Overlay color",
+    "default": "#000000"
+  },
+  {
+    "type": "range",
+    "id": "overlay_opacity",
+    "label": "Overlay opacity",
+    "min": 0,
+    "max": 1,
+    "step": 0.1,
+    "default": 0
+  }
+]

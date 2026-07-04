@@ -16,7 +16,8 @@ config/          Theme settings
 layout/          theme.liquid, password.liquid
 locales/         Translations
 sections/        Builder container, header, footer
-snippets/        helper-*, engine-*, widget-wrapper (flat — Shopify requirement)
+snippets/        helper-*, engine-*, widget-wrapper
+config/schema/   Reusable schema JSON fragments (source of truth)
 templates/       JSON templates
 ```
 

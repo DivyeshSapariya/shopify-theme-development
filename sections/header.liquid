@@ -1,5 +1,53 @@
 <header class="builder-header" role="banner">
-  <div class="builder-header__inner u-center">
+  <div class="builder-header__inner">
+    <div class="builder-header__logo">
+      <a href="{{ routes.root_url }}" class="builder-header__logo-link u-focus-ring">
+        {%- if section.settings.logo != blank -%}
+          {{
+            section.settings.logo
+            | image_url: width: 300
+            | image_tag:
+              class: 'builder-header__logo-img',
+              widths: '150, 200, 300',
+              alt: shop.name,
+              loading: 'eager'
+          }}
+        {%- else -%}
+          <span class="builder-header__shop-name">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+
+    {%- if section.settings.menu != blank -%}
+      <nav class="builder-header__nav" aria-label="{{ 'sections.header.menu' | t }}">
+        <ul class="builder-header__menu u-flex u-flex-wrap">
+          {%- for link in section.settings.menu.links -%}
+            <li class="builder-header__menu-item">
+              <a href="{{ link.url }}" class="builder-header__menu-link u-focus-ring{% if link.active %} is-active{% endif %}">
+                {{ link.title | escape }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+
+    <div class="builder-header__actions u-flex u-items-center">
+      <a href="{{ routes.search_url }}" class="builder-header__action u-focus-ring" aria-label="{{ 'sections.header.search' | t }}">
+        {{ 'sections.header.search' | t }}
+      </a>
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{{ routes.account_url }}" class="builder-header__action u-focus-ring">
+          {{ 'sections.header.account' | t }}
+        </a>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}" class="builder-header__action builder-header__cart u-focus-ring" aria-label="{{ 'sections.header.cart' | t }}">
+        {{ 'sections.header.cart' | t }}
+        {%- if cart.item_count > 0 -%}
+          <span class="builder-header__cart-count">({{ cart.item_count }})</span>
+        {%- endif -%}
+      </a>
+    </div>
   </div>
 </header>
 
@@ -8,6 +56,18 @@
   "name": "Header",
   "tag": "header",
   "class": "builder-header-section",
-  "settings": []
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
 }
 {% endschema %}

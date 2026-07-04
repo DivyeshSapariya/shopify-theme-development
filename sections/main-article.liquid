@@ -1,0 +1,18 @@
+<article class="builder-main-article page-width">
+  <header class="builder-main-article__header">
+    <h1 class="builder-main-article__title">{{ article.title | escape }}</h1>
+    <p class="builder-main-article__meta">{{ article.published_at | date: format: 'date' }}</p>
+  </header>
+  <div class="builder-main-article__content">
+    {{ article.content }}
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "section",
+  "class": "builder-main-article-section",
+  "settings": []
+}
+{% endschema %}

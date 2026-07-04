@@ -9,7 +9,7 @@
 
   if value == blank
     assign sanitized = ''
-  elsif value contains 'px' or value contains '%' or value contains 'em' or value contains 'rem' or value contains 'vh' or value contains 'vw' or value contains 'deg' or value contains 'fr'
+  elsif value contains 'px' or value contains '%' or value contains 'em' or value contains 'rem' or value contains 'vh' or value contains 'vw' or value contains 'deg' or value contains 'fr' or value contains 's'
     assign sanitized = value
   elsif value contains '#'
     assign sanitized = value

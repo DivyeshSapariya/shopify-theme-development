@@ -1,56 +1,65 @@
 {%- liquid
-  assign button_label = block.settings.label | default: 'Button'
-  assign button_link = block.settings.link | default: '#'
+  assign icon_size = block.settings.icon_size | default: 48
 -%}
 
 {%- capture widget_body -%}
-  <a href="{{ button_link }}" class="builder-button__link u-focus-ring">
-    {{ button_label | escape }}
-  </a>
+  {%- if block.settings.icon_image != blank -%}
+    {{
+      block.settings.icon_image
+      | image_url: width: 200
+      | image_tag:
+        class: 'builder-icon__img',
+        loading: 'lazy',
+        width: icon_size,
+        height: icon_size,
+        alt: block.settings.icon_alt | default: 'Icon' | escape
+    }}
+  {%- elsif block.settings.icon_text != blank -%}
+    <span class="builder-icon__text" aria-hidden="true">{{ block.settings.icon_text | escape }}</span>
+  {%- else -%}
+    <span class="builder-icon__placeholder" aria-hidden="true">★</span>
+  {%- endif -%}
 {%- endcapture -%}
 
-{% render 'widget-wrapper', block: block, widget_type: 'button', content: widget_body %}
+{% render 'widget-wrapper', block: block, widget_type: 'icon', content: widget_body %}
 
 {% schema %}
 {
-  "name": "Button",
+  "name": "Icon",
   "settings": [
+    { "type": "header", "content": "Content" },
     {
-      "type": "header",
-      "content": "Content"
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Icon image"
     },
     {
       "type": "text",
-      "id": "label",
-      "label": "Label",
-      "default": "Button"
+      "id": "icon_text",
+      "label": "Icon character",
+      "info": "Used when no image is selected"
     },
     {
-      "type": "url",
-      "id": "link",
-      "label": "Link"
+      "type": "text",
+      "id": "icon_alt",
+      "label": "Alt text"
     },
+    { "type": "header", "content": "Style" },
     {
-      "type": "header",
-      "content": "Style"
+      "type": "range",
+      "id": "icon_size",
+      "label": "Size",
+      "min": 16,
+      "max": 128,
+      "step": 4,
+      "unit": "px",
+      "default": 48
     },
     {
       "type": "color",
-      "id": "background_color",
-      "label": "Background",
+      "id": "text_color",
+      "label": "Color",
       "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
     },
     { "type": "header", "content": "Animation" },
     {
@@ -61,7 +70,7 @@
       "options": [
         { "value": "none", "label": "None" },
         { "value": "fade_in", "label": "Fade in" },
-        { "value": "slide_up", "label": "Slide up" }
+        { "value": "zoom_in", "label": "Zoom in" }
       ]
     },
     {
@@ -104,16 +113,8 @@
       "default": false
     },
     { "type": "header", "content": "Advanced" },
-    {
-      "type": "text",
-      "id": "css_class",
-      "label": "CSS class"
-    },
-    {
-      "type": "text",
-      "id": "aria_label",
-      "label": "ARIA label"
-    },
+    { "type": "text", "id": "css_class", "label": "CSS class" },
+    { "type": "text", "id": "aria_label", "label": "ARIA label" },
     {
       "type": "checkbox",
       "id": "aria_hidden",

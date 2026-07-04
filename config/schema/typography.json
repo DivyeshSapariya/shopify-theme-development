@@ -1,0 +1,62 @@
+[
+  { "type": "header", "content": "Typography" },
+  {
+    "type": "range",
+    "id": "font_size",
+    "label": "Font size",
+    "min": 12,
+    "max": 72,
+    "step": 1,
+    "unit": "px",
+    "default": 16
+  },
+  {
+    "type": "range",
+    "id": "font_size_tablet",
+    "label": "Font size (tablet)",
+    "min": 12,
+    "max": 72,
+    "step": 1,
+    "unit": "px",
+    "default": 16
+  },
+  {
+    "type": "range",
+    "id": "font_size_mobile",
+    "label": "Font size (mobile)",
+    "min": 12,
+    "max": 72,
+    "step": 1,
+    "unit": "px",
+    "default": 16
+  },
+  {
+    "type": "select",
+    "id": "font_weight",
+    "label": "Font weight",
+    "default": "400",
+    "options": [
+      { "value": "400", "label": "Regular" },
+      { "value": "500", "label": "Medium" },
+      { "value": "600", "label": "Semi bold" },
+      { "value": "700", "label": "Bold" }
+    ]
+  },
+  {
+    "type": "select",
+    "id": "text_align",
+    "label": "Text align",
+    "default": "left",
+    "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "center", "label": "Center" },
+      { "value": "right", "label": "Right" }
+    ]
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Text color",
+    "default": "#1a1a1a"
+  }
+]

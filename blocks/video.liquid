@@ -1,0 +1,144 @@
+{%- liquid
+  assign video_id = ''
+  assign video_type = ''
+  if block.settings.video_url != blank
+    assign video_id = block.settings.video_url.id
+    assign video_type = block.settings.video_url.type
+  endif
+-%}
+
+{%- capture widget_body -%}
+  <div class="builder-video__media">
+    {%- if block.settings.video != blank -%}
+      {{
+        block.settings.video
+        | video_tag:
+          class: 'builder-video__video',
+          image_size: '1100x',
+          autoplay: block.settings.autoplay,
+          loop: block.settings.loop,
+          muted: block.settings.autoplay,
+          controls: true
+      }}
+    {%- elsif video_type == 'youtube' and video_id != blank -%}
+      <iframe
+        class="builder-video__iframe"
+        src="https://www.youtube.com/embed/{{ video_id }}?rel=0"
+        title="{{ block.settings.video_title | default: 'Video' | escape }}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    {%- elsif video_type == 'vimeo' and video_id != blank -%}
+      <iframe
+        class="builder-video__iframe"
+        src="https://player.vimeo.com/video/{{ video_id }}"
+        title="{{ block.settings.video_title | default: 'Video' | escape }}"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    {%- else -%}
+      <div class="builder-video__placeholder" role="img" aria-label="{{ 'general.video.placeholder' | t }}"></div>
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
+
+{% render 'widget-wrapper', block: block, widget_type: 'video', content: widget_body %}
+
+{% schema %}
+{
+  "name": "Video",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify-hosted video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Video title",
+      "info": "Used for accessibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": false
+    },
+    { "type": "header", "content": "Animation" },
+    {
+      "type": "select",
+      "id": "entrance_animation",
+      "label": "Entrance animation",
+      "default": "none",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "fade_in", "label": "Fade in" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "animation_duration",
+      "label": "Duration",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s",
+      "default": 0.6
+    },
+    {
+      "type": "range",
+      "id": "animation_delay",
+      "label": "Delay",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s",
+      "default": 0
+    },
+    { "type": "header", "content": "Visibility" },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide on desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_tablet",
+      "label": "Hide on tablet",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile",
+      "default": false
+    },
+    { "type": "header", "content": "Advanced" },
+    { "type": "text", "id": "css_class", "label": "CSS class" },
+    { "type": "text", "id": "aria_label", "label": "ARIA label" },
+    {
+      "type": "checkbox",
+      "id": "aria_hidden",
+      "label": "Hide from screen readers",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

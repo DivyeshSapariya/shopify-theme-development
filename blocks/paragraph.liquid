@@ -40,14 +40,72 @@
       "label": "Text color",
       "default": "#666666"
     },
+    { "type": "header", "content": "Animation" },
     {
-      "type": "header",
-      "content": "Advanced"
+      "type": "select",
+      "id": "entrance_animation",
+      "label": "Entrance animation",
+      "default": "none",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "fade_in", "label": "Fade in" }
+      ]
     },
+    {
+      "type": "range",
+      "id": "animation_duration",
+      "label": "Duration",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s",
+      "default": 0.6
+    },
+    {
+      "type": "range",
+      "id": "animation_delay",
+      "label": "Delay",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s",
+      "default": 0
+    },
+    { "type": "header", "content": "Visibility" },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide on desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_tablet",
+      "label": "Hide on tablet",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile",
+      "default": false
+    },
+    { "type": "header", "content": "Advanced" },
     {
       "type": "text",
       "id": "css_class",
       "label": "CSS class"
+    },
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "ARIA label"
+    },
+    {
+      "type": "checkbox",
+      "id": "aria_hidden",
+      "label": "Hide from screen readers",
+      "default": false
     }
   ]
 }

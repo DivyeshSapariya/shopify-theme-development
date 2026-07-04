@@ -1,0 +1,10 @@
+{% comment %}
+  Shadow Engine — box and text shadow variables only.
+  @param settings {object}
+{% endcomment %}
+{%- if settings.box_shadow != blank -%}
+  --shadow: {{ settings.box_shadow }};
+{%- endif -%}
+{%- if settings.text_shadow != blank -%}
+  --text-shadow: {{ settings.text_shadow }};
+{%- endif -%}

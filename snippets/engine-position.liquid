@@ -1,0 +1,12 @@
+{% comment %}
+  Position Engine — position and offset variables only.
+  @param settings {object}
+{% endcomment %}
+{%- if settings.position != blank -%}
+  --position: {{ settings.position }};
+{%- endif -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'offset_top', css_var: 'top' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'offset_right', css_var: 'right' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'offset_bottom', css_var: 'bottom' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'offset_left', css_var: 'left' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'z_index', css_var: 'z', unit: '' -%}

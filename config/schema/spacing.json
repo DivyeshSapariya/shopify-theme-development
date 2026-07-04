@@ -1,0 +1,83 @@
+[
+  { "type": "header", "content": "Spacing" },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "label": "Padding top",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "padding_top_tablet",
+    "label": "Padding top (tablet)",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "padding_top_mobile",
+    "label": "Padding top (mobile)",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "padding_right",
+    "label": "Padding right",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "label": "Padding bottom",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "padding_left",
+    "label": "Padding left",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "margin_top",
+    "label": "Margin top",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "margin_bottom",
+    "label": "Margin bottom",
+    "min": 0,
+    "max": 200,
+    "step": 4,
+    "unit": "px",
+    "default": 0
+  }
+]

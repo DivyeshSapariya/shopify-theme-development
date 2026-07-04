@@ -1,0 +1,41 @@
+[
+  { "type": "header", "content": "Border" },
+  {
+    "type": "range",
+    "id": "border_width",
+    "label": "Border width",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "unit": "px",
+    "default": 0
+  },
+  {
+    "type": "select",
+    "id": "border_style",
+    "label": "Border style",
+    "default": "solid",
+    "options": [
+      { "value": "solid", "label": "Solid" },
+      { "value": "dashed", "label": "Dashed" },
+      { "value": "dotted", "label": "Dotted" },
+      { "value": "none", "label": "None" }
+    ]
+  },
+  {
+    "type": "color",
+    "id": "border_color",
+    "label": "Border color",
+    "default": "#e5e5e5"
+  },
+  {
+    "type": "range",
+    "id": "border_radius",
+    "label": "Border radius",
+    "min": 0,
+    "max": 48,
+    "step": 2,
+    "unit": "px",
+    "default": 0
+  }
+]

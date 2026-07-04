@@ -1,0 +1,31 @@
+<div class="builder-main-blog page-width">
+  <h1 class="builder-main-blog__title">{{ blog.title | escape }}</h1>
+
+  {%- paginate blog.articles by 6 -%}
+    <ul class="builder-main-blog__list" role="list">
+      {%- for article in blog.articles -%}
+        <li class="builder-main-blog__item">
+          <article>
+            <h2 class="builder-main-blog__article-title">
+              <a href="{{ article.url }}">{{ article.title | escape }}</a>
+            </h2>
+            <p class="builder-main-blog__meta">{{ article.published_at | date: format: 'date' }}</p>
+            {%- if article.excerpt != blank -%}
+              <p>{{ article.excerpt | strip_html | truncate: 160 }}</p>
+            {%- endif -%}
+          </article>
+        </li>
+      {%- endfor -%}
+    </ul>
+    {{ paginate | default_pagination }}
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "tag": "section",
+  "class": "builder-main-blog-section",
+  "settings": []
+}
+{% endschema %}

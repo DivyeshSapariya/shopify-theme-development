@@ -1,0 +1,25 @@
+{% comment %}
+  Layout Engine — flex/grid layout variables only.
+  @param settings {object}
+  @param mode {string} - container | column
+{% endcomment %}
+{%- if mode == 'container' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'direction', css_var: 'direction', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'wrap', css_var: 'wrap', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'justify_content', css_var: 'justify', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'align_items', css_var: 'align', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'width', css_var: 'width' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'max_width', css_var: 'max-width' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'min_height', css_var: 'min-height' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'inner_max_width', css_var: 'inner-max-width' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'display', css_var: 'display', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'grid_columns', css_var: 'grid-columns', unit: '' -%}
+{%- elsif mode == 'column' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'width', css_var: 'width', unit: '%' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'max_width', css_var: 'max-width', unit: '%' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'grow', css_var: 'grow', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'shrink', css_var: 'shrink', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'basis', css_var: 'basis' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'order', css_var: 'order', unit: '' -%}
+  {%- render 'helper-responsive-var', settings: settings, setting_key: 'align_self', css_var: 'align-self', unit: '' -%}
+{%- endif -%}

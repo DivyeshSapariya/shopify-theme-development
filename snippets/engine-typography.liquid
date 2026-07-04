@@ -1,0 +1,16 @@
+{% comment %}
+  Typography Engine — font variables only.
+  @param settings {object}
+{% endcomment %}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'font_size', css_var: 'fs' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'font_weight', css_var: 'fw', unit: '' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'line_height', css_var: 'lh', unit: '' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'letter_spacing', css_var: 'ls' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'text_align', css_var: 'ta', unit: '' -%}
+{%- render 'helper-responsive-var', settings: settings, setting_key: 'text_transform', css_var: 'tt', unit: '' -%}
+{%- if settings.text_color != blank -%}
+  --color: {{ settings.text_color }};
+{%- endif -%}
+{%- if settings.hover_color != blank -%}
+  --hover-color: {{ settings.hover_color }};
+{%- endif -%}

@@ -1,0 +1,47 @@
+<div class="builder-main-collection page-width">
+  <header class="builder-main-collection__header">
+    <h1 class="builder-main-collection__title">{{ collection.title | escape }}</h1>
+    {%- if collection.description != blank -%}
+      <div class="builder-main-collection__description">{{ collection.description }}</div>
+    {%- endif -%}
+  </header>
+
+  {%- paginate collection.products by 12 -%}
+    <ul class="builder-main-collection__grid u-grid" role="list">
+      {%- for product in collection.products -%}
+        <li class="builder-main-collection__item">
+          <a href="{{ product.url }}" class="builder-product-card u-focus-ring">
+            {%- if product.featured_media -%}
+              {{
+                product.featured_media
+                | image_url: width: 600
+                | image_tag:
+                  class: 'builder-product-card__image',
+                  loading: 'lazy',
+                  widths: '200, 300, 400, 600',
+                  alt: product.featured_media.alt | default: product.title
+              }}
+            {%- endif -%}
+            <h2 class="builder-product-card__title">{{ product.title | escape }}</h2>
+            <p class="builder-product-card__price">{{ product.price | money }}</p>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if paginate.pages > 1 -%}
+      <nav class="builder-pagination" aria-label="{{ 'general.pagination.label' | t }}">
+        {{ paginate | default_pagination }}
+      </nav>
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{
+  "name": "Collection products",
+  "tag": "section",
+  "class": "builder-main-collection-section",
+  "settings": []
+}
+{% endschema %}

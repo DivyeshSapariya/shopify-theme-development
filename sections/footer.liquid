@@ -1,6 +1,30 @@
 <footer class="builder-footer" role="contentinfo">
-  <div class="builder-footer__inner u-center">
-    <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+  <div class="builder-footer__inner">
+    <div class="builder-footer__brand">
+      <p class="builder-footer__shop-name">{{ shop.name }}</p>
+      {%- if section.settings.description != blank -%}
+        <p class="builder-footer__description">{{ section.settings.description | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.menu != blank -%}
+      <nav class="builder-footer__nav" aria-label="{{ 'sections.footer.menu' | t }}">
+        <ul class="builder-footer__menu">
+          {%- for link in section.settings.menu.links -%}
+            <li class="builder-footer__menu-item">
+              <a href="{{ link.url }}" class="builder-footer__menu-link u-focus-ring">{{ link.title | escape }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+
+    <p class="builder-footer__copyright">
+      &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}.
+      {%- if section.settings.show_powered_by -%}
+        {{ powered_by_link }}
+      {%- endif -%}
+    </p>
   </div>
 </footer>
 
@@ -9,6 +33,25 @@
   "name": "Footer",
   "tag": "footer",
   "class": "builder-footer-section",
-  "settings": []
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Built with Shopify Builder Framework."
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "footer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "label": "Show powered by Shopify",
+      "default": false
+    }
+  ]
 }
 {% endschema %}

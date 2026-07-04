@@ -3,9 +3,52 @@
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
       "page": "Page {{ page }}"
+    },
+    "pagination": {
+      "label": "Pagination"
+    },
+    "video": {
+      "placeholder": "Video placeholder"
     }
   },
   "accessibility": {
-    "skip_to_content": "Skip to content"
+    "skip_to_content": "Skip to content",
+    "spacer": "Spacer"
+  },
+  "sections": {
+    "announcement": {
+      "label": "Announcement"
+    },
+    "header": {
+      "menu": "Main menu",
+      "search": "Search",
+      "account": "Account",
+      "cart": "Cart"
+    },
+    "footer": {
+      "menu": "Footer menu"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out"
+    }
+  },
+  "cart": {
+    "title": "Your cart",
+    "product": "Product",
+    "quantity": "Quantity",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "empty": "Your cart is empty",
+    "continue_shopping": "Continue shopping"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search our store",
+    "submit": "Search",
+    "results_count": "{{ count }} results"
   }
 }

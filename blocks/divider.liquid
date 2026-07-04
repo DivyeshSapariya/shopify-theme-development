@@ -1,56 +1,49 @@
-{%- liquid
-  assign button_label = block.settings.label | default: 'Button'
-  assign button_link = block.settings.link | default: '#'
--%}
-
 {%- capture widget_body -%}
-  <a href="{{ button_link }}" class="builder-button__link u-focus-ring">
-    {{ button_label | escape }}
-  </a>
+  <hr class="builder-divider__line" role="separator">
 {%- endcapture -%}
 
-{% render 'widget-wrapper', block: block, widget_type: 'button', content: widget_body %}
+{% render 'widget-wrapper', block: block, widget_type: 'divider', content: widget_body %}
 
 {% schema %}
 {
-  "name": "Button",
+  "name": "Divider",
   "settings": [
+    { "type": "header", "content": "Style" },
     {
-      "type": "header",
-      "content": "Content"
-    },
-    {
-      "type": "text",
-      "id": "label",
-      "label": "Label",
-      "default": "Button"
-    },
-    {
-      "type": "url",
-      "id": "link",
-      "label": "Link"
-    },
-    {
-      "type": "header",
-      "content": "Style"
+      "type": "range",
+      "id": "border_width",
+      "label": "Thickness",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "default": 1
     },
     {
       "type": "color",
-      "id": "background_color",
-      "label": "Background",
-      "default": "#1a1a1a"
+      "id": "border_color",
+      "label": "Color",
+      "default": "#e5e5e5"
     },
     {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
+      "type": "range",
+      "id": "padding_top",
+      "label": "Spacing above",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 16
     },
     {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#ffffff"
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Spacing below",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 16
     },
     { "type": "header", "content": "Animation" },
     {
@@ -60,8 +53,7 @@
       "default": "none",
       "options": [
         { "value": "none", "label": "None" },
-        { "value": "fade_in", "label": "Fade in" },
-        { "value": "slide_up", "label": "Slide up" }
+        { "value": "fade_in", "label": "Fade in" }
       ]
     },
     {
@@ -104,16 +96,8 @@
       "default": false
     },
     { "type": "header", "content": "Advanced" },
-    {
-      "type": "text",
-      "id": "css_class",
-      "label": "CSS class"
-    },
-    {
-      "type": "text",
-      "id": "aria_label",
-      "label": "ARIA label"
-    },
+    { "type": "text", "id": "css_class", "label": "CSS class" },
+    { "type": "text", "id": "aria_label", "label": "ARIA label" },
     {
       "type": "checkbox",
       "id": "aria_hidden",

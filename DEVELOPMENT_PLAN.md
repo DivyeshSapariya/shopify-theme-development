@@ -482,13 +482,13 @@ refactor: extract spacing schema fragment
 | 0 | Environment & Skeleton | ✅ Complete (CLI installed, Theme Check passes) |
 | 1 | CSS Foundation | ✅ Complete |
 | 2 | Helpers & Variable Engine | ✅ Complete |
-| 3 | Style/Responsive/Layout Engines | ⬜ Not started (partial in engine.css) |
-| 4 | Schema System | ⬜ Not started |
-| 5 | Builder Container & Columns | 🟡 Wired with engines; editor test pending |
-| 6 | Widget System Foundation | ✅ widget-wrapper + 4 basic widgets |
-| 7 | Basic Widgets | 🟡 Heading, Paragraph, Button, Image done |
+| 3 | Style/Responsive/Layout Engines | ✅ Complete |
+| 4 | Schema System | ✅ Complete (`config/schema/` fragments + registry) |
+| 5 | Builder Container & Columns | ✅ Complete |
+| 6 | Widget System Foundation | ✅ widget-wrapper + engines on all components |
+| 7 | Basic Widgets | ✅ Complete (9 widgets) |
 | 8 | JavaScript & Interactive Widgets | ⬜ Not started |
-| 9 | Theme Shell & Templates | ⬜ Not started |
+| 9 | Theme Shell & Templates | ✅ Complete |
 | 10 | Shopify Commerce Widgets | ⬜ Not started |
 | 11 | Marketing & Media Widgets | ⬜ Not started |
 | 12 | Global Tokens & Presets | ⬜ Not started |

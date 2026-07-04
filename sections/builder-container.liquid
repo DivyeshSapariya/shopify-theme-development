@@ -11,9 +11,18 @@
   elsif section.settings.container_width == 'boxed'
     assign width_modifier = 'builder-container--boxed'
   endif
+
+  assign inner_classes = 'builder-container__inner'
+  if section.settings.layout_type == 'grid'
+    assign inner_classes = inner_classes | append: ' builder-container__inner--grid'
+  endif
 -%}
+{%- capture modifier_classes -%}
+  {%- render 'helper-visibility-classes', settings: section.settings -%}
+  {%- render 'helper-animation-classes', settings: section.settings -%}
+{%- endcapture -%}
 {%- capture container_classes -%}
-  {%- render 'helper-class-builder', base: 'builder-container', uid: uid, custom_class: section.settings.css_class -%}
+  {%- render 'helper-class-builder', base: 'builder-container', uid: uid, custom_class: section.settings.css_class, extra_classes: modifier_classes -%}
 {%- endcapture -%}
 
 {%- render 'engine-variable',
@@ -27,13 +36,14 @@
   class="{{ container_classes }} {{ width_modifier }} u-relative"
   data-builder-id="{{ uid }}"
   data-builder-type="container"
+  {% render 'helper-attribute-builder', settings: section.settings %}
   {{ section.shopify_attributes }}
 >
-  {%- if section.settings.background_color != blank or section.settings.overlay_color != blank -%}
+  {%- if section.settings.overlay_opacity > 0 -%}
     <div class="builder-container__overlay" aria-hidden="true"></div>
   {%- endif -%}
 
-  <div class="builder-container__inner">
+  <div class="{{ inner_classes }}">
     {% content_for 'blocks' %}
   </div>
 </section>
@@ -43,14 +53,9 @@
   "name": "Builder Container",
   "tag": "section",
   "class": "builder-container-section",
-  "blocks": [
-    { "type": "column" }
-  ],
+  "blocks": [{ "type": "column" }],
   "settings": [
-    {
-      "type": "header",
-      "content": "Layout"
-    },
+    { "type": "header", "content": "Layout" },
     {
       "type": "select",
       "id": "container_width",
@@ -59,6 +64,16 @@
       "options": [
         { "value": "boxed", "label": "Boxed" },
         { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout_type",
+      "label": "Layout type",
+      "default": "flex",
+      "options": [
+        { "value": "flex", "label": "Flex" },
+        { "value": "grid", "label": "Grid" }
       ]
     },
     {
@@ -152,10 +167,7 @@
       "default": "1200",
       "info": "Unitless number outputs px"
     },
-    {
-      "type": "header",
-      "content": "Spacing"
-    },
+    { "type": "header", "content": "Spacing" },
     {
       "type": "range",
       "id": "padding_top",
@@ -216,15 +228,49 @@
       "unit": "px",
       "default": 20
     },
-    {
-      "type": "header",
-      "content": "Style"
-    },
+    { "type": "header", "content": "Background" },
     {
       "type": "color",
       "id": "background_color",
       "label": "Background color",
       "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0
+    },
+    { "type": "header", "content": "Border" },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e5e5e5"
     },
     {
       "type": "range",
@@ -236,20 +282,52 @@
       "unit": "px",
       "default": 0
     },
+    { "type": "header", "content": "Animation" },
     {
-      "type": "header",
-      "content": "Advanced"
+      "type": "select",
+      "id": "entrance_animation",
+      "label": "Entrance animation",
+      "default": "none",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "fade_in", "label": "Fade in" },
+        { "value": "slide_up", "label": "Slide up" },
+        { "value": "zoom_in", "label": "Zoom in" }
+      ]
     },
     {
-      "type": "text",
-      "id": "css_id",
-      "label": "CSS ID"
+      "type": "range",
+      "id": "animation_duration",
+      "label": "Duration",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "unit": "s",
+      "default": 0.6
+    },
+    { "type": "header", "content": "Visibility" },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide on desktop",
+      "default": false
     },
     {
-      "type": "text",
-      "id": "css_class",
-      "label": "CSS class"
-    }
+      "type": "checkbox",
+      "id": "hide_on_tablet",
+      "label": "Hide on tablet",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile",
+      "default": false
+    },
+    { "type": "header", "content": "Advanced" },
+    { "type": "text", "id": "css_id", "label": "CSS ID" },
+    { "type": "text", "id": "css_class", "label": "CSS class" },
+    { "type": "text", "id": "aria_label", "label": "ARIA label" }
   ],
   "presets": [
     {
