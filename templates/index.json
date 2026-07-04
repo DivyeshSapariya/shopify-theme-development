@@ -1,7 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+<<<<<<< HEAD
     "hero": { "type": "hero" },
     "feature-grid": { "type": "feature-grid" }
   },
   "order": ["hero", "feature-grid"]
+=======
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Hey Bro, Welcome To Our Store.",
+        "subheading": "This is our first store and we are developing light-weight theme.",
+        "bg_color": "#8ADBDE",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "hero"
+  ]
+>>>>>>> 172747a6ca27aae676fe3f0b50ff042a1e2ada6d
 }
