@@ -27,7 +27,7 @@
         "feature_HHcfqX": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/theme_cover_image.jpg",
+            "icon": "shopify://shop_images/bmw-car-company-logo-png-transparent-image-3.png",
             "title": "Free shipping",
             "text": "On all orders over $50."
           }
@@ -35,7 +35,7 @@
         "feature_QTWGAr": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Main.jpg",
+            "icon": "shopify://shop_images/company-logo-ford-logos-download-22.png",
             "title": "Free shipping",
             "text": "On all orders over $50."
           }
@@ -43,7 +43,7 @@
         "feature_UMNhwG": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "icon": "shopify://shop_images/company-logo-simmons-bedding-company-wikipedia-15.png",
             "title": "Free shipping",
             "text": "On all orders over $50."
           }
@@ -51,7 +51,7 @@
         "feature_K83XWg": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "icon": "shopify://shop_images/hyundai-motor-company-logo-png-transparent-0.png",
             "title": "Free shipping",
             "text": "On all orders over $50."
           }
@@ -59,7 +59,7 @@
         "feature_bhb7M4": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "icon": "shopify://shop_images/company-aeg-logo-aeg-symbol-meaning-history-and-evolution-13.png",
             "title": "Free shipping",
             "text": "On all orders over $50."
           }
@@ -67,7 +67,7 @@
         "feature_E98nDG": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "icon": "shopify://shop_images/company-dole-food-company-16.png",
             "title": "Free shipping",
             "text": "On all orders over $50."
           }
@@ -230,35 +230,42 @@
         "logo_itF7JM": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg",
+            "image": "shopify://shop_images/company-logo-simmons-bedding-company-wikipedia-15.png",
             "alt": ""
           }
         },
         "logo_PCK4WB": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "image": "shopify://shop_images/company-dole-food-company-16.png",
             "alt": ""
           }
         },
         "logo_DRCDhJ": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Main_9129b69a-0c7b-4f66-b6cf-c4222f18028a.jpg",
+            "image": "shopify://shop_images/bmw-car-company-logo-png-transparent-image-3.png",
+            "alt": ""
+          }
+        },
+        "logo_hctCmd": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/hyundai-motor-company-logo-png-transparent-0.png",
             "alt": ""
           }
         },
         "logo_eKVEiQ": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Main_b9e0da7f-db89-4d41-83f0-7f417b02831d.jpg",
+            "image": "shopify://shop_images/company-aeg-logo-aeg-symbol-meaning-history-and-evolution-13.png",
             "alt": ""
           }
         },
         "logo_rxk4Bx": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Main_0a4e9096-021a-4c1e-8750-24b233166a12.jpg",
+            "image": "shopify://shop_images/company-logo-ford-logos-download-22.png",
             "alt": ""
           }
         }
@@ -267,6 +274,7 @@
         "logo_itF7JM",
         "logo_PCK4WB",
         "logo_DRCDhJ",
+        "logo_hctCmd",
         "logo_eKVEiQ",
         "logo_rxk4Bx"
       ],
