@@ -1,0 +1,73 @@
+{%- comment -%}
+  sections/logo-bar.liquid
+  ------------------------------------------------------------------
+  Last of the original 7 sections. Image blocks, similar shape to
+  feature-grid's icon field, but here the image IS the content —
+  no title/text alongside it, just a row of logos.
+  ------------------------------------------------------------------
+{%- endcomment -%}
+
+<section
+  class="theme-logo-bar-section"
+  style="
+    {% render 'style-vars', section: section %}
+    --logo-height: {{ section.settings.logo_height }}px;
+  "
+>
+  <div class="theme-logo-bar-section__inner">
+    {% if section.settings.heading != blank %}
+      <p class="theme-logo-bar-section__heading">{{ section.settings.heading }}</p>
+    {% endif %}
+
+    <div class="theme-logo-bar">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'logo' %}
+            {% if block.settings.image != blank %}
+              <img
+                class="theme-logo-bar__logo"
+                src="{{ block.settings.image | image_url: width: 200 }}"
+                alt="{{ block.settings.alt | escape }}"
+                loading="lazy"
+                {{ block.shopify_attributes }}
+              >
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logo bar",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "As seen in" },
+    { "id": "logo_height", "type": "range", "label": "Logo height", "min": 16, "max": 64, "default": 32, "unit": "px" },
+    { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
+    { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 40 },
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "id": "image", "type": "image_picker", "label": "Logo image" },
+        { "id": "alt", "type": "text", "label": "Alt text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo bar",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}
