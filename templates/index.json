@@ -1,16 +1,14 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" },
-    "logo-bar": { "type": "logo-bar" },
-    "testimonials": { "type": "testimonials" },
-    "faq": { "type": "faq" },
-    "cta": { "type": "cta" }
-  },
-  "order": ["hero", "feature-grid", "product-grid", "logo-bar", "testimonials", "faq", "cta"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
@@ -222,6 +220,61 @@
         "padding_top": 80,
         "padding_bottom": 80
       }
+    },
+    "logo_bar_zzNKc4": {
+      "type": "logo-bar",
+      "blocks": {
+        "logo_itF7JM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg",
+            "alt": ""
+          }
+        },
+        "logo_PCK4WB": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
+            "alt": ""
+          }
+        },
+        "logo_DRCDhJ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main_9129b69a-0c7b-4f66-b6cf-c4222f18028a.jpg",
+            "alt": ""
+          }
+        },
+        "logo_eKVEiQ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main_b9e0da7f-db89-4d41-83f0-7f417b02831d.jpg",
+            "alt": ""
+          }
+        },
+        "logo_rxk4Bx": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main_0a4e9096-021a-4c1e-8750-24b233166a12.jpg",
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_itF7JM",
+        "logo_PCK4WB",
+        "logo_DRCDhJ",
+        "logo_eKVEiQ",
+        "logo_rxk4Bx"
+      ],
+      "name": "Logo bar",
+      "settings": {
+        "heading": "As seen in",
+        "logo_height": 64,
+        "bg_color": "#DDDDDD",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -230,7 +283,7 @@
     "product_grid_Y4PjN8",
     "testimonials_KLk4jh",
     "faq_LQftBC",
-    "cta_t3pHAq"
+    "cta_t3pHAq",
+    "logo_bar_zzNKc4"
   ]
->>>>>>> df8c089745b3a1f6eaa17f87eae965fd39ddf7ae
 }
