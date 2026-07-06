@@ -1,14 +1,14 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" },
-    "testimonials": { "type": "testimonials" },
-    "faq": { "type": "faq" }
-  },
-  "order": ["hero", "feature-grid", "product-grid", "testimonials", "faq"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
@@ -156,9 +156,55 @@
       "settings": {
         "heading": "What customers say",
         "columns": 3,
-        "bg_color": "#DDDDDD",
+        "bg_color": "#dddddd",
         "padding_top": 80,
         "padding_bottom": 80
+      }
+    },
+    "faq_LQftBC": {
+      "type": "faq",
+      "blocks": {
+        "question_MpP4YD": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        },
+        "question_FXMEQQ": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        },
+        "question_JTHrfc": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        },
+        "question_TkfA4i": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_MpP4YD",
+        "question_FXMEQQ",
+        "question_JTHrfc",
+        "question_TkfA4i"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "heading": "Frequently asked questions",
+        "bg_color": "#ffffff",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
@@ -166,7 +212,7 @@
     "hero",
     "feature_grid_iwK4cY",
     "product_grid_Y4PjN8",
-    "testimonials_KLk4jh"
+    "testimonials_KLk4jh",
+    "faq_LQftBC"
   ]
->>>>>>> 2e4e5e87b15aedbc43e53463a70ec5ca7438ffed
 }
