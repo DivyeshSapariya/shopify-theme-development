@@ -1,0 +1,71 @@
+{%- comment -%}
+  sections/testimonials.liquid
+  ------------------------------------------------------------------
+  Blocks again, same pattern as feature-grid, but each block has a
+  numeric rating setting rendered as star characters using a simple
+  Liquid loop (no third-party rating widget needed).
+  ------------------------------------------------------------------
+{%- endcomment -%}
+
+<section class="theme-testimonials-section" style="{% render 'style-vars', section: section %} --columns: {{ section.settings.columns }};">
+  <div class="theme-testimonials-section__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="theme-testimonials-section__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="theme-testimonials">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'testimonial' %}
+            <div class="theme-testimonial" {{ block.shopify_attributes }}>
+              {% if block.settings.rating > 0 %}
+                <div class="theme-testimonial__rating">
+                  {% for i in (1..block.settings.rating) %}★{% endfor %}
+                </div>
+              {% endif %}
+              {% if block.settings.quote != blank %}
+                <p class="theme-testimonial__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
+              {% endif %}
+              {% if block.settings.author != blank %}
+                <p class="theme-testimonial__author">{{ block.settings.author }}</p>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "What customers say" },
+    { "id": "columns", "type": "range", "label": "Columns", "min": 1, "max": 4, "default": 3 },
+    { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
+    { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "id": "rating", "type": "range", "label": "Rating", "min": 0, "max": 5, "default": 5 },
+        { "id": "quote", "type": "textarea", "label": "Quote", "default": "This product changed how I shop online." },
+        { "id": "author", "type": "text", "label": "Author", "default": "Happy Customer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

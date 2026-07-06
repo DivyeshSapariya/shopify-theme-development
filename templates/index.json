@@ -1,68 +1,9 @@
 {
   "sections": {
-<<<<<<< HEAD
     "hero": { "type": "hero" },
     "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" }
+    "product-grid": { "type": "product-grid" },
+    "testimonials": { "type": "testimonials" }
   },
-  "order": ["hero", "feature-grid", "product-grid"]
-=======
-    "hero": {
-      "type": "hero",
-      "settings": {
-        "heading": "Hey Bro, Welcome To Our Store.",
-        "subheading": "This is our first store and we are developing light-weight theme.",
-        "bg_color": "#8adbde",
-        "padding_top": 120,
-        "padding_bottom": 120
-      }
-    },
-    "feature_grid_iwK4cY": {
-      "type": "feature-grid",
-      "blocks": {
-        "feature_HHcfqX": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/theme_cover_image.jpg",
-            "title": "Free shipping",
-            "text": "On all orders over $50."
-          }
-        },
-        "feature_QTWGAr": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Main.jpg",
-            "title": "Free shipping",
-            "text": "On all orders over $50."
-          }
-        },
-        "feature_UMNhwG": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Main_d624f226-0a89-4fe1-b333-0d1548b43c06.jpg",
-            "title": "Free shipping",
-            "text": "On all orders over $50."
-          }
-        }
-      },
-      "block_order": [
-        "feature_HHcfqX",
-        "feature_QTWGAr",
-        "feature_UMNhwG"
-      ],
-      "name": "Feature grid",
-      "settings": {
-        "heading": "Why shop with us",
-        "columns": 3,
-        "bg_color": "#ffffff",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    }
-  },
-  "order": [
-    "hero",
-    "feature_grid_iwK4cY"
-  ]
->>>>>>> 1a300f87d891964709ddca8fca35144bf0640b3b
+  "order": ["hero", "feature-grid", "product-grid", "testimonials"]
 }
