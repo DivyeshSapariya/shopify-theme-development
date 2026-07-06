@@ -1,16 +1,14 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" },
-    "logo-bar": { "type": "logo-bar" },
-    "testimonials": { "type": "testimonials" },
-    "faq": { "type": "faq" },
-    "cta": { "type": "cta" }
-  },
-  "order": ["hero", "feature-grid", "product-grid", "logo-bar", "testimonials", "faq", "cta"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
@@ -98,9 +96,12 @@
       "name": "Product grid",
       "settings": {
         "heading": "Featured products",
+        "heading_size": 42,
+        "heading_weight": "700",
         "collection": "automated-collection",
         "products_to_show": 5,
         "columns": 5,
+        "image_ratio": "1 / 1",
         "bg_color": "#ffffff",
         "padding_top": 80,
         "padding_bottom": 80
@@ -160,6 +161,9 @@
       "name": "Testimonials",
       "settings": {
         "heading": "What customers say",
+        "heading_size": 42,
+        "heading_weight": "700",
+        "quote_size": 15,
         "columns": 3,
         "bg_color": "#dddddd",
         "padding_top": 80,
@@ -207,6 +211,9 @@
       "name": "FAQ",
       "settings": {
         "heading": "Frequently asked questions",
+        "heading_size": 42,
+        "heading_weight": "700",
+        "question_size": 16,
         "bg_color": "#ffffff",
         "padding_top": 80,
         "padding_bottom": 80
@@ -219,6 +226,8 @@
         "heading": "Ready to get started?",
         "button_label": "Shop now",
         "button_link": "shopify://pages/contact",
+        "heading_size": 42,
+        "heading_weight": "700",
         "bg_color": "#f7f7f7",
         "button_bg_color": "#111111",
         "button_text_color": "#ffffff",
@@ -283,6 +292,7 @@
       "name": "Logo bar",
       "settings": {
         "heading": "As seen in",
+        "label_size": 20,
         "logo_height": 64,
         "bg_color": "#dddddd",
         "padding_top": 80,
@@ -299,5 +309,4 @@
     "cta_t3pHAq",
     "logo_bar_zzNKc4"
   ]
->>>>>>> 940e7e6f0266bd7bceea02f08a9422c80399179f
 }
