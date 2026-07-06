@@ -9,22 +9,13 @@
  */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" },
-    "logo-bar": { "type": "logo-bar" },
-    "testimonials": { "type": "testimonials" },
-    "faq": { "type": "faq" },
-    "cta": { "type": "cta" }
-  },
-  "order": ["hero", "feature-grid", "product-grid", "logo-bar", "testimonials", "faq", "cta"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
         "heading": "Hey Bro, Welcome To Our Store.",
         "subheading": "This is our first store and we are developing light-weight theme.",
+        "heading_size": 52,
+        "heading_weight": "700",
         "bg_color": "#8adbde",
         "padding_top": 120,
         "padding_bottom": 120
@@ -94,6 +85,7 @@
       "settings": {
         "heading": "Why shop with us",
         "columns": 3,
+        "icon_size": 96,
         "bg_color": "#ffffff",
         "padding_top": 80,
         "padding_bottom": 80
@@ -282,7 +274,7 @@
       "settings": {
         "heading": "As seen in",
         "logo_height": 64,
-        "bg_color": "#DDDDDD",
+        "bg_color": "#dddddd",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -297,5 +289,4 @@
     "cta_t3pHAq",
     "logo_bar_zzNKc4"
   ]
->>>>>>> bb142ebfc9b4fe1cd8023788fa393748be151fcb
 }
