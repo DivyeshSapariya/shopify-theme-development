@@ -12,6 +12,7 @@
   style="
     {% render 'style-vars', section: section %}
     --logo-height: {{ section.settings.logo_height }}px;
+    --label-fs: {{ section.settings.label_size }}px;
   "
 >
   <div class="theme-logo-bar-section__inner">
@@ -43,7 +44,11 @@
   "name": "Logo bar",
   "settings": [
     { "id": "heading", "type": "text", "label": "Heading", "default": "As seen in" },
+    { "type": "header", "content": "Typography" },
+    { "id": "label_size", "type": "range", "label": "Label text size", "min": 10, "max": 20, "default": 14, "unit": "px" },
+    { "type": "header", "content": "Logo" },
     { "id": "logo_height", "type": "range", "label": "Logo height", "min": 16, "max": 64, "default": 32, "unit": "px" },
+    { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 40 },
     { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 40 }

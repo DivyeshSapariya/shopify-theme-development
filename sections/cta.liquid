@@ -13,6 +13,8 @@
     {% render 'style-vars', section: section %}
     --btn-bg: {{ section.settings.button_bg_color }};
     --btn-color: {{ section.settings.button_text_color }};
+    --heading-fs: {{ section.settings.heading_size }}px;
+    --heading-fw: {{ section.settings.heading_weight }};
   "
 >
   <div class="theme-cta-section__inner">
@@ -34,6 +36,18 @@
     { "id": "heading", "type": "text", "label": "Heading", "default": "Ready to get started?" },
     { "id": "button_label", "type": "text", "label": "Button label", "default": "Shop now" },
     { "id": "button_link", "type": "url", "label": "Button link" },
+    { "type": "header", "content": "Typography" },
+    { "id": "heading_size", "type": "range", "label": "Heading size", "min": 20, "max": 48, "step": 2, "unit": "px", "default": 30 },
+    {
+      "id": "heading_weight", "type": "select", "label": "Heading weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "600", "label": "Medium" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#f7f7f7" },
     { "id": "button_bg_color", "type": "color", "label": "Button background", "default": "#111111" },
     { "id": "button_text_color", "type": "color", "label": "Button text color", "default": "#ffffff" },

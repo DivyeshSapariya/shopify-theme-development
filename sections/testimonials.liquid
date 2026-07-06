@@ -7,7 +7,16 @@
   ------------------------------------------------------------------
 {%- endcomment -%}
 
-<section class="theme-testimonials-section" style="{% render 'style-vars', section: section %} --columns: {{ section.settings.columns }};">
+<section
+  class="theme-testimonials-section"
+  style="
+    {% render 'style-vars', section: section %}
+    --columns: {{ section.settings.columns }};
+    --heading-fs: {{ section.settings.heading_size }}px;
+    --heading-fw: {{ section.settings.heading_weight }};
+    --quote-fs: {{ section.settings.quote_size }}px;
+  "
+>
   <div class="theme-testimonials-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-testimonials-section__heading">{{ section.settings.heading }}</h2>
@@ -41,7 +50,21 @@
   "name": "Testimonials",
   "settings": [
     { "id": "heading", "type": "text", "label": "Heading", "default": "What customers say" },
+    { "type": "header", "content": "Typography" },
+    { "id": "heading_size", "type": "range", "label": "Heading size", "min": 20, "max": 48, "step": 2, "unit": "px", "default": 28 },
+    {
+      "id": "heading_weight", "type": "select", "label": "Heading weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "600", "label": "Medium" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    { "id": "quote_size", "type": "range", "label": "Quote text size", "min": 12, "max": 22, "default": 15, "unit": "px" },
+    { "type": "header", "content": "Layout" },
     { "id": "columns", "type": "range", "label": "Columns", "min": 1, "max": 4, "default": 3 },
+    { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
     { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }

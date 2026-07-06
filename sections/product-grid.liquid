@@ -7,7 +7,16 @@
   ------------------------------------------------------------------
 {%- endcomment -%}
 
-<section class="theme-product-grid-section" style="{% render 'style-vars', section: section %} --columns: {{ section.settings.columns }};">
+<section
+  class="theme-product-grid-section"
+  style="
+    {% render 'style-vars', section: section %}
+    --columns: {{ section.settings.columns }};
+    --heading-fs: {{ section.settings.heading_size }}px;
+    --heading-fw: {{ section.settings.heading_weight }};
+    --img-ratio: {{ section.settings.image_ratio }};
+  "
+>
   <div class="theme-product-grid-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-product-grid-section__heading">{{ section.settings.heading }}</h2>
@@ -39,9 +48,31 @@
   "name": "Product grid",
   "settings": [
     { "id": "heading", "type": "text", "label": "Heading", "default": "Featured products" },
+    { "type": "header", "content": "Typography" },
+    { "id": "heading_size", "type": "range", "label": "Heading size", "min": 20, "max": 48, "step": 2, "unit": "px", "default": 28 },
+    {
+      "id": "heading_weight", "type": "select", "label": "Heading weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "600", "label": "Medium" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    { "type": "header", "content": "Products" },
     { "id": "collection", "type": "collection", "label": "Collection" },
     { "id": "products_to_show", "type": "range", "label": "Products to show", "min": 2, "max": 12, "default": 8 },
     { "id": "columns", "type": "range", "label": "Columns", "min": 2, "max": 5, "default": 4 },
+    {
+      "id": "image_ratio", "type": "select", "label": "Image shape",
+      "options": [
+        { "value": "1 / 1", "label": "Square" },
+        { "value": "4 / 5", "label": "Portrait" },
+        { "value": "4 / 3", "label": "Landscape" }
+      ],
+      "default": "1 / 1"
+    },
+    { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
     { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }

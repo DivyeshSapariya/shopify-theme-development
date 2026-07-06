@@ -8,7 +8,15 @@
   ------------------------------------------------------------------
 {%- endcomment -%}
 
-<section class="theme-faq-section" style="{% render 'style-vars', section: section %}">
+<section
+  class="theme-faq-section"
+  style="
+    {% render 'style-vars', section: section %}
+    --heading-fs: {{ section.settings.heading_size }}px;
+    --heading-fw: {{ section.settings.heading_weight }};
+    --question-fs: {{ section.settings.question_size }}px;
+  "
+>
   <div class="theme-faq-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-faq-section__heading">{{ section.settings.heading }}</h2>
@@ -38,6 +46,19 @@
   "name": "FAQ",
   "settings": [
     { "id": "heading", "type": "text", "label": "Heading", "default": "Frequently asked questions" },
+    { "type": "header", "content": "Typography" },
+    { "id": "heading_size", "type": "range", "label": "Heading size", "min": 20, "max": 48, "step": 2, "unit": "px", "default": 28 },
+    {
+      "id": "heading_weight", "type": "select", "label": "Heading weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "600", "label": "Medium" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    { "id": "question_size", "type": "range", "label": "Question text size", "min": 14, "max": 22, "default": 16, "unit": "px" },
+    { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
     { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }

@@ -101,7 +101,8 @@
 }
 
 .theme-product-grid-section__heading {
-  font-size: 28px;
+  font-size: var(--heading-fs, 28px);
+  font-weight: var(--heading-fw, 700);
   text-align: center;
   margin: 0 0 var(--theme-space-md) 0;
   color: var(--theme-text);
@@ -125,7 +126,7 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--theme-radius-md);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: var(--img-ratio, 1 / 1);
   background: var(--theme-border);
 }
 
@@ -164,7 +165,8 @@
 }
 
 .theme-testimonials-section__heading {
-  font-size: 28px;
+  font-size: var(--heading-fs, 28px);
+  font-weight: var(--heading-fw, 700);
   text-align: center;
   margin: 0 0 var(--theme-space-md) 0;
   color: var(--theme-text);
@@ -191,7 +193,7 @@
 }
 
 .theme-testimonial__quote {
-  font-size: 15px;
+  font-size: var(--quote-fs, 15px);
   margin: 0;
   color: var(--theme-text);
 }
@@ -219,7 +221,8 @@
 }
 
 .theme-faq-section__heading {
-  font-size: 28px;
+  font-size: var(--heading-fs, 28px);
+  font-weight: var(--heading-fw, 700);
   text-align: center;
   margin: 0 0 var(--theme-space-md) 0;
   color: var(--theme-text);
@@ -243,7 +246,7 @@
   background: none;
   border: none;
   padding: var(--theme-space-sm) 0;
-  font-size: 16px;
+  font-size: var(--question-fs, 16px);
   font-weight: 600;
   color: var(--theme-text);
   cursor: pointer;
@@ -302,7 +305,8 @@
 }
 
 .theme-cta-section__heading {
-  font-size: 30px;
+  font-size: var(--heading-fs, 30px);
+  font-weight: var(--heading-fw, 700);
   margin: 0;
   color: var(--theme-text);
 }
@@ -343,7 +347,7 @@
 }
 
 .theme-logo-bar-section__heading {
-  font-size: 14px;
+  font-size: var(--label-fs, 14px);
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
