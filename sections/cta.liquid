@@ -1,0 +1,45 @@
+{%- comment -%}
+  sections/cta.liquid
+  ------------------------------------------------------------------
+  The simplest section so far — no blocks, just heading + button.
+  Proves the same style-vars pipeline works just as well for a small
+  section as it did for the bigger ones.
+  ------------------------------------------------------------------
+{%- endcomment -%}
+
+<section
+  class="theme-cta-section"
+  style="
+    {% render 'style-vars', section: section %}
+    --btn-bg: {{ section.settings.button_bg_color }};
+    --btn-color: {{ section.settings.button_text_color }};
+  "
+>
+  <div class="theme-cta-section__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="theme-cta-section__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link | default: '#' }}" class="theme-cta-section__button">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA banner",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "Ready to get started?" },
+    { "id": "button_label", "type": "text", "label": "Button label", "default": "Shop now" },
+    { "id": "button_link", "type": "url", "label": "Button link" },
+    { "id": "bg_color", "type": "color", "label": "Background color", "default": "#f7f7f7" },
+    { "id": "button_bg_color", "type": "color", "label": "Button background", "default": "#111111" },
+    { "id": "button_text_color", "type": "color", "label": "Button text color", "default": "#ffffff" },
+    { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "presets": [{ "name": "CTA banner" }]
+}
+{% endschema %}
