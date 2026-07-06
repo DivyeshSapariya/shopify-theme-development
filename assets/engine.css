@@ -18,7 +18,8 @@
 }
 
 .theme-hero__heading {
-  font-size: 40px;
+  font-size: var(--heading-fs, 40px);
+  font-weight: var(--heading-fw, 700);
   margin: 0 0 var(--theme-space-sm) 0;
   color: var(--theme-text);
 }
@@ -66,8 +67,9 @@
 }
 
 .theme-feature__icon {
-  width: 40px;
-  height: 40px;
+  width: var(--icon-size, 40px);
+  height: var(--icon-size, 40px);
+  object-fit: contain;
 }
 
 .theme-feature__title {

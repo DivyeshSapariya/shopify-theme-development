@@ -7,7 +7,14 @@
   ------------------------------------------------------------------
 {%- endcomment -%}
 
-<section class="theme-feature-grid-section" style="{% render 'style-vars', section: section %} --columns: {{ section.settings.columns }};">
+<section
+  class="theme-feature-grid-section"
+  style="
+    {% render 'style-vars', section: section %}
+    --columns: {{ section.settings.columns }};
+    --icon-size: {{ section.settings.icon_size }}px;
+  "
+>
   <div class="theme-feature-grid-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-feature-grid-section__heading">{{ section.settings.heading }}</h2>
@@ -19,7 +26,7 @@
           {% when 'feature' %}
             <div class="theme-feature" {{ block.shopify_attributes }}>
               {% if block.settings.icon != blank %}
-                <img class="theme-feature__icon" src="{{ block.settings.icon | image_url: width: 80 }}" alt="" loading="lazy" width="40" height="40">
+                <img class="theme-feature__icon" src="{{ block.settings.icon | image_url: width: 160 }}" alt="" loading="lazy">
               {% endif %}
               {% if block.settings.title != blank %}
                 <h3 class="theme-feature__title">{{ block.settings.title }}</h3>
@@ -40,6 +47,9 @@
   "settings": [
     { "id": "heading", "type": "text", "label": "Heading", "default": "Why shop with us" },
     { "id": "columns", "type": "range", "label": "Columns", "min": 1, "max": 4, "default": 3 },
+    { "type": "header", "content": "Icon" },
+    { "id": "icon_size", "type": "range", "label": "Icon size", "min": 24, "max": 96, "step": 4, "unit": "px", "default": 40 },
+    { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
     { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }

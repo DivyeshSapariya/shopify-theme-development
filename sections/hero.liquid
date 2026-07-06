@@ -8,7 +8,14 @@
   ------------------------------------------------------------------
 {%- endcomment -%}
 
-<section class="theme-hero" style="{% render 'style-vars', section: section %}">
+<section
+  class="theme-hero"
+  style="
+    {% render 'style-vars', section: section %}
+    --heading-fs: {{ section.settings.heading_size }}px;
+    --heading-fw: {{ section.settings.heading_weight }};
+  "
+>
   <div class="theme-hero__inner">
     {% if section.settings.heading != blank %}
       <h1 class="theme-hero__heading">{{ section.settings.heading }}</h1>
@@ -25,6 +32,18 @@
   "settings": [
     { "id": "heading", "type": "text", "label": "Heading", "default": "Welcome to our store" },
     { "id": "subheading", "type": "textarea", "label": "Subheading", "default": "This text sits inside the hero section." },
+    { "type": "header", "content": "Typography" },
+    { "id": "heading_size", "type": "range", "label": "Heading size", "min": 24, "max": 64, "step": 2, "unit": "px", "default": 40 },
+    {
+      "id": "heading_weight", "type": "select", "label": "Heading weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "600", "label": "Medium" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
     { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
