@@ -9,14 +9,6 @@
  */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" },
-    "testimonials": { "type": "testimonials" }
-  },
-  "order": ["hero", "feature-grid", "product-grid", "testimonials"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
@@ -104,7 +96,67 @@
         "collection": "automated-collection",
         "products_to_show": 5,
         "columns": 5,
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "testimonials_KLk4jh": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_PtAhHk": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_9UBkqC": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_6gXKAt": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_Y7mY9t": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_WFMXFN": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_PtAhHk",
+        "testimonial_9UBkqC",
+        "testimonial_6gXKAt",
+        "testimonial_Y7mY9t",
+        "testimonial_WFMXFN"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "heading": "What customers say",
+        "columns": 3,
+        "bg_color": "#DDDDDD",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -113,7 +165,7 @@
   "order": [
     "hero",
     "feature_grid_iwK4cY",
-    "product_grid_Y4PjN8"
+    "product_grid_Y4PjN8",
+    "testimonials_KLk4jh"
   ]
->>>>>>> 1c35b810830511a4e7f3dd84f272db2a2033f6aa
 }
