@@ -9,16 +9,6 @@
  */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" },
-    "testimonials": { "type": "testimonials" },
-    "faq": { "type": "faq" },
-    "cta": { "type": "cta" }
-  },
-  "order": ["hero", "feature-grid", "product-grid", "testimonials", "faq", "cta"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
@@ -213,8 +203,22 @@
       "settings": {
         "heading": "Frequently asked questions",
         "bg_color": "#ffffff",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "cta_t3pHAq": {
+      "type": "cta",
+      "name": "CTA banner",
+      "settings": {
+        "heading": "Ready to get started?",
+        "button_label": "Shop now",
+        "button_link": "shopify://pages/contact",
+        "bg_color": "#f7f7f7",
+        "button_bg_color": "#111111",
+        "button_text_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },
@@ -223,7 +227,7 @@
     "feature_grid_iwK4cY",
     "product_grid_Y4PjN8",
     "testimonials_KLk4jh",
-    "faq_LQftBC"
+    "faq_LQftBC",
+    "cta_t3pHAq"
   ]
->>>>>>> efbb920319246e8309b8dabb3be6449df92c0107
 }
