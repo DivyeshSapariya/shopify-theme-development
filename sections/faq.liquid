@@ -1,0 +1,66 @@
+{%- comment -%}
+  sections/faq.liquid
+  ------------------------------------------------------------------
+  Same block pattern as before, but this is the first section that
+  needs JavaScript — clicking a question toggles its answer open or
+  closed. The JS lives in assets/theme.js, loaded once in the layout,
+  shared by every FAQ block automatically (no per-block script needed).
+  ------------------------------------------------------------------
+{%- endcomment -%}
+
+<section class="theme-faq-section" style="{% render 'style-vars', section: section %}">
+  <div class="theme-faq-section__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="theme-faq-section__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="theme-faq" data-faq>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'question' %}
+            <div class="theme-faq-item" {{ block.shopify_attributes }}>
+              <button class="theme-faq-item__question" data-faq-toggle aria-expanded="false">
+                <span>{{ block.settings.question }}</span>
+                <span class="theme-faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="theme-faq-item__answer">
+                <div class="theme-faq-item__answer-inner">{{ block.settings.answer }}</div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "Frequently asked questions" },
+    { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
+    { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "id": "question", "type": "text", "label": "Question", "default": "How long does shipping take?" },
+        { "id": "answer", "type": "richtext", "label": "Answer", "default": "<p>Orders ship within 2-3 business days.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "question" },
+        { "type": "question" },
+        { "type": "question" }
+      ]
+    }
+  ]
+}
+{% endschema %}
