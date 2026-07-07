@@ -9,14 +9,16 @@
 {%- endcomment -%}
 
 <section
-  class="theme-hero"
+  class="theme-section theme-hero"
   style="
     {% render 'style-vars', section: section %}
     --heading-fs: {{ section.settings.heading_size }}px;
     --heading-fw: {{ section.settings.heading_weight }};
+    --heading-fs-tablet: {{ section.settings.heading_size_tablet | default: section.settings.heading_size }}px;
+    --heading-fs-mobile: {{ section.settings.heading_size_mobile | default: section.settings.heading_size_tablet | default: section.settings.heading_size }}px;
   "
 >
-  <div class="theme-hero__inner">
+  <div class="theme-section__inner theme-hero__inner">
     {% if section.settings.heading != blank %}
       <h1 class="theme-hero__heading">{{ section.settings.heading }}</h1>
     {% endif %}
@@ -33,7 +35,9 @@
     { "id": "heading", "type": "text", "label": "Heading", "default": "Welcome to our store" },
     { "id": "subheading", "type": "textarea", "label": "Subheading", "default": "This text sits inside the hero section." },
     { "type": "header", "content": "Typography" },
-    { "id": "heading_size", "type": "range", "label": "Heading size", "min": 24, "max": 64, "step": 2, "unit": "px", "default": 40 },
+    { "id": "heading_size", "type": "range", "label": "Heading size (desktop)", "min": 24, "max": 64, "step": 2, "unit": "px", "default": 40 },
+    { "id": "heading_size_tablet", "type": "range", "label": "Heading size (tablet)", "min": 20, "max": 56, "step": 2, "unit": "px", "default": 32 },
+    { "id": "heading_size_mobile", "type": "range", "label": "Heading size (mobile)", "min": 18, "max": 40, "step": 2, "unit": "px", "default": 26 },
     {
       "id": "heading_weight", "type": "select", "label": "Heading weight",
       "options": [
@@ -45,8 +49,15 @@
     },
     { "type": "header", "content": "Style" },
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#ffffff" },
+    { "type": "header", "content": "Spacing (desktop)" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
-    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 }
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 80 },
+    { "type": "header", "content": "Spacing (tablet)" },
+    { "id": "padding_top_tablet", "type": "range", "label": "Padding top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 },
+    { "id": "padding_bottom_tablet", "type": "range", "label": "Padding bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 },
+    { "type": "header", "content": "Spacing (mobile)" },
+    { "id": "padding_top_mobile", "type": "range", "label": "Padding top", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 40 },
+    { "id": "padding_bottom_mobile", "type": "range", "label": "Padding bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 40 }
   ],
   "presets": [{ "name": "Hero" }]
 }

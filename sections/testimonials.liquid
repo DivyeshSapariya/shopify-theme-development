@@ -8,7 +8,7 @@
 {%- endcomment -%}
 
 <section
-  class="theme-testimonials-section"
+  class="theme-section theme-testimonials-section"
   style="
     {% render 'style-vars', section: section %}
     --columns: {{ section.settings.columns }};
@@ -17,7 +17,7 @@
     --quote-fs: {{ section.settings.quote_size }}px;
   "
 >
-  <div class="theme-testimonials-section__inner">
+  <div class="theme-section__inner theme-testimonials-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-testimonials-section__heading">{{ section.settings.heading }}</h2>
     {% endif %}

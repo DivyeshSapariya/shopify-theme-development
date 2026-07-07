@@ -8,7 +8,7 @@
 {%- endcomment -%}
 
 <section
-  class="theme-product-grid-section"
+  class="theme-section theme-product-grid-section"
   style="
     {% render 'style-vars', section: section %}
     --columns: {{ section.settings.columns }};
@@ -17,7 +17,7 @@
     --img-ratio: {{ section.settings.image_ratio }};
   "
 >
-  <div class="theme-product-grid-section__inner">
+  <div class="theme-section__inner theme-product-grid-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-product-grid-section__heading">{{ section.settings.heading }}</h2>
     {% endif %}

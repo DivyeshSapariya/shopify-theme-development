@@ -9,7 +9,7 @@
 {%- endcomment -%}
 
 <section
-  class="theme-faq-section"
+  class="theme-section theme-faq-section"
   style="
     {% render 'style-vars', section: section %}
     --heading-fs: {{ section.settings.heading_size }}px;
@@ -17,7 +17,7 @@
     --question-fs: {{ section.settings.question_size }}px;
   "
 >
-  <div class="theme-faq-section__inner">
+  <div class="theme-section__inner theme-faq-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-faq-section__heading">{{ section.settings.heading }}</h2>
     {% endif %}

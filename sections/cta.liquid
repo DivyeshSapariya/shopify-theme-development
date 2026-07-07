@@ -8,7 +8,7 @@
 {%- endcomment -%}
 
 <section
-  class="theme-cta-section"
+  class="theme-section theme-cta-section"
   style="
     {% render 'style-vars', section: section %}
     --btn-bg: {{ section.settings.button_bg_color }};
@@ -17,7 +17,7 @@
     --heading-fw: {{ section.settings.heading_weight }};
   "
 >
-  <div class="theme-cta-section__inner">
+  <div class="theme-section__inner theme-cta-section__inner">
     {% if section.settings.heading != blank %}
       <h2 class="theme-cta-section__heading">{{ section.settings.heading }}</h2>
     {% endif %}

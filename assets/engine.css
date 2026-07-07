@@ -4,16 +4,41 @@
    CSS variables set by style-vars.liquid — never hardcode a look here.
    ========================================================================== */
 
-.theme-hero {
+/* --------------------------------------------------------------------------
+   SHARED FOUNDATION — every section's outer wrapper uses .theme-section
+   and .theme-section__inner. Padding, background, and responsive behavior
+   are written ONCE here instead of repeated per section.
+   -------------------------------------------------------------------- */
+.theme-section {
   padding-top: var(--pt, var(--theme-space-lg));
   padding-bottom: var(--pb, var(--theme-space-lg));
   background: var(--bg, var(--theme-secondary));
 }
 
-.theme-hero__inner {
+.theme-section__inner {
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: var(--theme-space-md);
+}
+
+/* Tablet: use the tablet override if a section defined one, otherwise
+   fall back to the desktop value */
+@media (max-width: 991px) {
+  .theme-section {
+    padding-top: var(--pt-tablet, var(--pt, var(--theme-space-md)));
+    padding-bottom: var(--pb-tablet, var(--pb, var(--theme-space-md)));
+  }
+}
+
+/* Mobile: same idea, one step smaller */
+@media (max-width: 767px) {
+  .theme-section {
+    padding-top: var(--pt-mobile, var(--pt-tablet, var(--pt, var(--theme-space-sm))));
+    padding-bottom: var(--pb-mobile, var(--pb-tablet, var(--pb, var(--theme-space-sm))));
+  }
+}
+
+.theme-hero__inner {
   text-align: center;
 }
 
@@ -30,21 +55,16 @@
   margin: 0;
 }
 
+@media (max-width: 991px) {
+  .theme-hero__heading { font-size: var(--heading-fs-tablet, var(--heading-fs, 32px)); }
+}
+@media (max-width: 767px) {
+  .theme-hero__heading { font-size: var(--heading-fs-mobile, var(--heading-fs-tablet, 26px)); }
+}
+
 /* ==========================================================================
    FEATURE GRID (first section using blocks)
    ========================================================================== */
-.theme-feature-grid-section {
-  padding-top: var(--pt, var(--theme-space-lg));
-  padding-bottom: var(--pb, var(--theme-space-lg));
-  background: var(--bg, var(--theme-secondary));
-}
-
-.theme-feature-grid-section__inner {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--theme-space-md);
-}
-
 .theme-feature-grid-section__heading {
   font-size: 28px;
   text-align: center;
@@ -73,33 +93,28 @@
 }
 
 .theme-feature__title {
-  font-size: 18px;
+  font-size: var(--item-title-fs, 18px);
   font-weight: 600;
   margin: 0;
   color: var(--theme-text);
 }
 
 .theme-feature__text {
-  font-size: 15px;
+  font-size: var(--item-text-fs, 15px);
   color: var(--theme-muted);
   margin: 0;
+}
+
+@media (max-width: 991px) {
+  .theme-feature-grid { grid-template-columns: repeat(var(--columns-tablet, 2), 1fr); }
+}
+@media (max-width: 767px) {
+  .theme-feature-grid { grid-template-columns: repeat(var(--columns-mobile, 1), 1fr); }
 }
 
 /* ==========================================================================
    PRODUCT GRID
    ========================================================================== */
-.theme-product-grid-section {
-  padding-top: var(--pt, var(--theme-space-lg));
-  padding-bottom: var(--pb, var(--theme-space-lg));
-  background: var(--bg, var(--theme-secondary));
-}
-
-.theme-product-grid-section__inner {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--theme-space-md);
-}
-
 .theme-product-grid-section__heading {
   font-size: var(--heading-fs, 28px);
   font-weight: var(--heading-fw, 700);
@@ -149,21 +164,16 @@
   margin: 0;
 }
 
+@media (max-width: 991px) {
+  .theme-product-grid { grid-template-columns: repeat(var(--columns-tablet, 2), 1fr); }
+}
+@media (max-width: 767px) {
+  .theme-product-grid { grid-template-columns: repeat(var(--columns-mobile, 2), 1fr); }
+}
+
 /* ==========================================================================
    TESTIMONIALS
    ========================================================================== */
-.theme-testimonials-section {
-  padding-top: var(--pt, var(--theme-space-lg));
-  padding-bottom: var(--pb, var(--theme-space-lg));
-  background: var(--bg, var(--theme-secondary));
-}
-
-.theme-testimonials-section__inner {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--theme-space-md);
-}
-
 .theme-testimonials-section__heading {
   font-size: var(--heading-fs, 28px);
   font-weight: var(--heading-fw, 700);
@@ -205,21 +215,16 @@
   margin: 0;
 }
 
+@media (max-width: 991px) {
+  .theme-testimonials { grid-template-columns: repeat(var(--columns-tablet, 2), 1fr); }
+}
+@media (max-width: 767px) {
+  .theme-testimonials { grid-template-columns: repeat(var(--columns-mobile, 1), 1fr); }
+}
+
 /* ==========================================================================
    FAQ (accordion — JS in theme.js just toggles the .is-open class)
    ========================================================================== */
-.theme-faq-section {
-  padding-top: var(--pt, var(--theme-space-lg));
-  padding-bottom: var(--pb, var(--theme-space-lg));
-  background: var(--bg, var(--theme-secondary));
-}
-
-.theme-faq-section__inner {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--theme-space-md);
-}
-
 .theme-faq-section__heading {
   font-size: var(--heading-fs, 28px);
   font-weight: var(--heading-fw, 700);
@@ -287,16 +292,7 @@
 /* ==========================================================================
    CTA BANNER (simplest section — no blocks needed)
    ========================================================================== */
-.theme-cta-section {
-  padding-top: var(--pt, var(--theme-space-lg));
-  padding-bottom: var(--pb, var(--theme-space-lg));
-  background: var(--bg, var(--theme-secondary));
-}
-
 .theme-cta-section__inner {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--theme-space-md);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -334,18 +330,6 @@
 /* ==========================================================================
    LOGO BAR (last of the original 7 — image blocks, no text alongside)
    ========================================================================== */
-.theme-logo-bar-section {
-  padding-top: var(--pt, var(--theme-space-md));
-  padding-bottom: var(--pb, var(--theme-space-md));
-  background: var(--bg, var(--theme-secondary));
-}
-
-.theme-logo-bar-section__inner {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: var(--theme-space-md);
-}
-
 .theme-logo-bar-section__heading {
   font-size: var(--label-fs, 14px);
   text-transform: uppercase;

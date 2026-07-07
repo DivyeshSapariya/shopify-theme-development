@@ -8,14 +8,14 @@
 {%- endcomment -%}
 
 <section
-  class="theme-logo-bar-section"
+  class="theme-section theme-logo-bar-section"
   style="
     {% render 'style-vars', section: section %}
     --logo-height: {{ section.settings.logo_height }}px;
     --label-fs: {{ section.settings.label_size }}px;
   "
 >
-  <div class="theme-logo-bar-section__inner">
+  <div class="theme-section__inner theme-logo-bar-section__inner">
     {% if section.settings.heading != blank %}
       <p class="theme-logo-bar-section__heading">{{ section.settings.heading }}</p>
     {% endif %}
