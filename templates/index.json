@@ -9,27 +9,22 @@
  */
 {
   "sections": {
-<<<<<<< HEAD
-    "hero": { "type": "hero" },
-    "feature-grid": { "type": "feature-grid" },
-    "product-grid": { "type": "product-grid" },
-    "logo-bar": { "type": "logo-bar" },
-    "testimonials": { "type": "testimonials" },
-    "faq": { "type": "faq" },
-    "cta": { "type": "cta" }
-  },
-  "order": ["hero", "feature-grid", "product-grid", "logo-bar", "testimonials", "faq", "cta"]
-=======
     "hero": {
       "type": "hero",
       "settings": {
         "heading": "Hey Bro, Welcome To Our Store.",
         "subheading": "This is our first store and we are developing light-weight theme.",
         "heading_size": 52,
+        "heading_size_tablet": 32,
+        "heading_size_mobile": 24,
         "heading_weight": "700",
         "bg_color": "#8adbde",
         "padding_top": 120,
-        "padding_bottom": 120
+        "padding_bottom": 120,
+        "padding_top_tablet": 56,
+        "padding_bottom_tablet": 56,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
       }
     },
     "feature_grid_iwK4cY": {
@@ -174,7 +169,7 @@
         "heading": "What customers say",
         "heading_size": 42,
         "heading_weight": "700",
-        "quote_size": 15,
+        "quote_size": 16,
         "columns": 3,
         "bg_color": "#dddddd",
         "padding_top": 80,
@@ -320,5 +315,4 @@
     "cta_t3pHAq",
     "logo_bar_zzNKc4"
   ]
->>>>>>> 03bbff8ca67ad2cae93968bd498c23f4ac777ed2
 }
