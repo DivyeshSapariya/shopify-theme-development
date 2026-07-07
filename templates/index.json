@@ -1,15 +1,5 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-<<<<<<< HEAD
     "main": {
       "type": "main"
     }
@@ -18,74 +8,3 @@
     "main"
   ]
 }
-=======
-    "logo_bar_zzNKc4": {
-      "type": "logo-bar",
-      "blocks": {
-        "logo_itF7JM": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/company-logo-simmons-bedding-company-wikipedia-15.png",
-            "alt": ""
-          }
-        },
-        "logo_PCK4WB": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/company-dole-food-company-16.png",
-            "alt": ""
-          }
-        },
-        "logo_DRCDhJ": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/bmw-car-company-logo-png-transparent-image-3.png",
-            "alt": ""
-          }
-        },
-        "logo_hctCmd": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/hyundai-motor-company-logo-png-transparent-0.png",
-            "alt": ""
-          }
-        },
-        "logo_eKVEiQ": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/company-aeg-logo-aeg-symbol-meaning-history-and-evolution-13.png",
-            "alt": ""
-          }
-        },
-        "logo_rxk4Bx": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/company-logo-ford-logos-download-22.png",
-            "alt": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_itF7JM",
-        "logo_PCK4WB",
-        "logo_DRCDhJ",
-        "logo_hctCmd",
-        "logo_eKVEiQ",
-        "logo_rxk4Bx"
-      ],
-      "name": "Logo bar",
-      "settings": {
-        "heading": "As seen in",
-        "label_size": 20,
-        "logo_height": 64,
-        "bg_color": "#dddddd",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    }
-  },
-  "order": [
-    "logo_bar_zzNKc4"
-  ]
-}
->>>>>>> 13de2b83097fa4f7f6be5d57dadcc6723251894a
