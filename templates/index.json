@@ -1,5 +1,15 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+<<<<<<< HEAD
     "hero": { "type": "hero" },
     "feature-grid": { "type": "feature-grid" },
     "product-grid": { "type": "product-grid" },
@@ -9,4 +19,306 @@
     "cta": { "type": "cta" }
   },
   "order": ["hero", "feature-grid", "product-grid", "logo-bar", "testimonials", "faq", "cta"]
+=======
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Hey Bro, Welcome To Our Store.",
+        "subheading": "This is our first store and we are developing light-weight theme.",
+        "heading_size": 52,
+        "heading_weight": "700",
+        "bg_color": "#8adbde",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "feature_grid_iwK4cY": {
+      "type": "feature-grid",
+      "blocks": {
+        "feature_HHcfqX": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/bmw-car-company-logo-png-transparent-image-3.png",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        },
+        "feature_QTWGAr": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/company-logo-ford-logos-download-22.png",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        },
+        "feature_UMNhwG": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/company-logo-simmons-bedding-company-wikipedia-15.png",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        },
+        "feature_K83XWg": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/hyundai-motor-company-logo-png-transparent-0.png",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        },
+        "feature_bhb7M4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/company-aeg-logo-aeg-symbol-meaning-history-and-evolution-13.png",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        },
+        "feature_E98nDG": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/company-dole-food-company-16.png",
+            "title": "Free shipping",
+            "text": "On all orders over $50."
+          }
+        }
+      },
+      "block_order": [
+        "feature_HHcfqX",
+        "feature_QTWGAr",
+        "feature_UMNhwG",
+        "feature_K83XWg",
+        "feature_bhb7M4",
+        "feature_E98nDG"
+      ],
+      "name": "Feature grid",
+      "settings": {
+        "heading": "Why shop with us",
+        "columns": 3,
+        "icon_size": 96,
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "product_grid_Y4PjN8": {
+      "type": "product-grid",
+      "name": "Product grid",
+      "settings": {
+        "heading": "Featured products",
+        "heading_size": 42,
+        "heading_weight": "700",
+        "collection": "automated-collection",
+        "products_to_show": 5,
+        "columns": 5,
+        "image_ratio": "1 / 1",
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "testimonials_KLk4jh": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_PtAhHk": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_9UBkqC": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_6gXKAt": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_Y7mY9t": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        },
+        "testimonial_WFMXFN": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "This product changed how I shop online.",
+            "author": "Happy Customer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_PtAhHk",
+        "testimonial_9UBkqC",
+        "testimonial_6gXKAt",
+        "testimonial_Y7mY9t",
+        "testimonial_WFMXFN"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "heading": "What customers say",
+        "heading_size": 42,
+        "heading_weight": "700",
+        "quote_size": 15,
+        "columns": 3,
+        "bg_color": "#dddddd",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "faq_LQftBC": {
+      "type": "faq",
+      "blocks": {
+        "question_MpP4YD": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        },
+        "question_FXMEQQ": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        },
+        "question_JTHrfc": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        },
+        "question_TkfA4i": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders ship within 2-3 business days.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_MpP4YD",
+        "question_FXMEQQ",
+        "question_JTHrfc",
+        "question_TkfA4i"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "heading": "Frequently asked questions",
+        "heading_size": 42,
+        "heading_weight": "700",
+        "question_size": 16,
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "cta_t3pHAq": {
+      "type": "cta",
+      "name": "CTA banner",
+      "settings": {
+        "heading": "Ready to get started?",
+        "button_label": "Shop now",
+        "button_link": "shopify://pages/contact",
+        "heading_size": 42,
+        "heading_weight": "700",
+        "bg_color": "#f7f7f7",
+        "button_bg_color": "#111111",
+        "button_text_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "logo_bar_zzNKc4": {
+      "type": "logo-bar",
+      "blocks": {
+        "logo_itF7JM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/company-logo-simmons-bedding-company-wikipedia-15.png",
+            "alt": ""
+          }
+        },
+        "logo_PCK4WB": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/company-dole-food-company-16.png",
+            "alt": ""
+          }
+        },
+        "logo_DRCDhJ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/bmw-car-company-logo-png-transparent-image-3.png",
+            "alt": ""
+          }
+        },
+        "logo_hctCmd": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/hyundai-motor-company-logo-png-transparent-0.png",
+            "alt": ""
+          }
+        },
+        "logo_eKVEiQ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/company-aeg-logo-aeg-symbol-meaning-history-and-evolution-13.png",
+            "alt": ""
+          }
+        },
+        "logo_rxk4Bx": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/company-logo-ford-logos-download-22.png",
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_itF7JM",
+        "logo_PCK4WB",
+        "logo_DRCDhJ",
+        "logo_hctCmd",
+        "logo_eKVEiQ",
+        "logo_rxk4Bx"
+      ],
+      "name": "Logo bar",
+      "settings": {
+        "heading": "As seen in",
+        "label_size": 20,
+        "logo_height": 64,
+        "bg_color": "#dddddd",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "feature_grid_iwK4cY",
+    "product_grid_Y4PjN8",
+    "testimonials_KLk4jh",
+    "faq_LQftBC",
+    "cta_t3pHAq",
+    "logo_bar_zzNKc4"
+  ]
+>>>>>>> 03bbff8ca67ad2cae93968bd498c23f4ac777ed2
 }
