@@ -166,9 +166,11 @@
 
 @media (max-width: 991px) {
   .theme-product-grid { grid-template-columns: repeat(var(--columns-tablet, 2), 1fr); }
+  .theme-product-grid-section__heading { font-size: var(--heading-fs-tablet, var(--heading-fs, 24px)); }
 }
 @media (max-width: 767px) {
   .theme-product-grid { grid-template-columns: repeat(var(--columns-mobile, 2), 1fr); }
+  .theme-product-grid-section__heading { font-size: var(--heading-fs-mobile, var(--heading-fs-tablet, 22px)); }
 }
 
 /* ==========================================================================
@@ -217,9 +219,11 @@
 
 @media (max-width: 991px) {
   .theme-testimonials { grid-template-columns: repeat(var(--columns-tablet, 2), 1fr); }
+  .theme-testimonials-section__heading { font-size: var(--heading-fs-tablet, var(--heading-fs, 24px)); }
 }
 @media (max-width: 767px) {
   .theme-testimonials { grid-template-columns: repeat(var(--columns-mobile, 1), 1fr); }
+  .theme-testimonials-section__heading { font-size: var(--heading-fs-mobile, var(--heading-fs-tablet, 22px)); }
 }
 
 /* ==========================================================================
@@ -231,6 +235,13 @@
   text-align: center;
   margin: 0 0 var(--theme-space-md) 0;
   color: var(--theme-text);
+}
+
+@media (max-width: 991px) {
+  .theme-faq-section__heading { font-size: var(--heading-fs-tablet, var(--heading-fs, 24px)); }
+}
+@media (max-width: 767px) {
+  .theme-faq-section__heading { font-size: var(--heading-fs-mobile, var(--heading-fs-tablet, 22px)); }
 }
 
 .theme-faq {
@@ -307,6 +318,13 @@
   color: var(--theme-text);
 }
 
+@media (max-width: 991px) {
+  .theme-cta-section__heading { font-size: var(--heading-fs-tablet, var(--heading-fs, 26px)); }
+}
+@media (max-width: 767px) {
+  .theme-cta-section__heading { font-size: var(--heading-fs-mobile, var(--heading-fs-tablet, 22px)); }
+}
+
 .theme-cta-section__button {
   display: inline-block;
   padding: 14px 28px;
@@ -351,4 +369,8 @@
   max-height: var(--logo-height, 32px);
   width: auto;
   opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+  .theme-logo-bar__logo { max-height: var(--logo-height-mobile, var(--logo-height, 24px)); }
 }

@@ -15,6 +15,8 @@
     --btn-color: {{ section.settings.button_text_color }};
     --heading-fs: {{ section.settings.heading_size }}px;
     --heading-fw: {{ section.settings.heading_weight }};
+    --heading-fs-tablet: {{ section.settings.heading_size_tablet | default: section.settings.heading_size }}px;
+    --heading-fs-mobile: {{ section.settings.heading_size_mobile | default: section.settings.heading_size_tablet | default: section.settings.heading_size }}px;
   "
 >
   <div class="theme-section__inner theme-cta-section__inner">
@@ -37,7 +39,9 @@
     { "id": "button_label", "type": "text", "label": "Button label", "default": "Shop now" },
     { "id": "button_link", "type": "url", "label": "Button link" },
     { "type": "header", "content": "Typography" },
-    { "id": "heading_size", "type": "range", "label": "Heading size", "min": 20, "max": 48, "step": 2, "unit": "px", "default": 30 },
+    { "id": "heading_size", "type": "range", "label": "Heading size (desktop)", "min": 20, "max": 48, "step": 2, "unit": "px", "default": 30 },
+    { "id": "heading_size_tablet", "type": "range", "label": "Heading size (tablet)", "min": 18, "max": 40, "step": 2, "unit": "px", "default": 26 },
+    { "id": "heading_size_mobile", "type": "range", "label": "Heading size (mobile)", "min": 16, "max": 32, "step": 2, "unit": "px", "default": 22 },
     {
       "id": "heading_weight", "type": "select", "label": "Heading weight",
       "options": [
@@ -51,8 +55,15 @@
     { "id": "bg_color", "type": "color", "label": "Background color", "default": "#f7f7f7" },
     { "id": "button_bg_color", "type": "color", "label": "Button background", "default": "#111111" },
     { "id": "button_text_color", "type": "color", "label": "Button text color", "default": "#ffffff" },
+    { "type": "header", "content": "Spacing (desktop)" },
     { "id": "padding_top", "type": "range", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
-    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }
+    { "id": "padding_bottom", "type": "range", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
+    { "type": "header", "content": "Spacing (tablet)" },
+    { "id": "padding_top_tablet", "type": "range", "label": "Padding top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "id": "padding_bottom_tablet", "type": "range", "label": "Padding bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "header", "content": "Spacing (mobile)" },
+    { "id": "padding_top_mobile", "type": "range", "label": "Padding top", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 32 },
+    { "id": "padding_bottom_mobile", "type": "range", "label": "Padding bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 32 }
   ],
   "presets": [{ "name": "CTA banner" }]
 }
