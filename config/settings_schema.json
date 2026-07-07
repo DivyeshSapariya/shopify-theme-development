@@ -1,17 +1,1 @@
-[
-  {
-    "name": "theme_info",
-    "theme_name": "Lumen",
-    "theme_version": "0.1.0",
-    "theme_author": "Divyesh",
-    "theme_documentation_url": "",
-    "theme_support_url": ""
-  },
-  {
-    "name": "Typography",
-    "settings": [
-      { "id": "heading_font", "type": "font_picker", "label": "Heading font", "default": "helvetica_n7" },
-      { "id": "body_font", "type": "font_picker", "label": "Body font", "default": "helvetica_n4" }
-    ]
-  }
-]
+[]

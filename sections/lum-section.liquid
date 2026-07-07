@@ -1,0 +1,230 @@
+{% liquid
+  assign tag = section.settings.layout_tag
+
+  if tag == blank
+    assign tag = 'section'
+  endif
+
+  assign width = section.settings.layout_width
+%}
+
+<{{ tag }}
+  id="shopify-section-{{ section.id }}"
+  class="
+    lum
+    lum-section
+    {% if width == 'boxed' %}
+      lum-container
+    {% endif %}
+    {{ section.settings.advanced_class }}
+  "
+  style="
+    --lum-bg:{{ section.settings.background_color }};
+    --lum-bg-gradient:{{ section.settings.background_gradient }};
+    --lum-padding-top:{{ section.settings.spacing_padding_top }}px;
+    --lum-padding-right:{{ section.settings.spacing_padding_right }}px;
+    --lum-padding-bottom:{{ section.settings.spacing_padding_bottom }}px;
+    --lum-padding-left:{{ section.settings.spacing_padding_left }}px;
+
+    --lum-padding-top-mobile:{{ section.settings.spacing_padding_top_mobile }}px;
+    --lum-padding-right-mobile:{{ section.settings.spacing_padding_right_mobile }}px;
+    --lum-padding-bottom-mobile:{{ section.settings.spacing_padding_bottom_mobile }}px;
+    --lum-padding-left-mobile:{{ section.settings.spacing_padding_left_mobile }}px;
+  "
+>
+
+  {% content_for "blocks" %}
+
+</{{ tag }}>
+
+{% schema %}
+{
+  "name": "Lumen Section",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+
+    {
+      "type":"header",
+      "content":"Layout"
+    },
+
+    {
+      "type":"select",
+      "id":"layout_width",
+      "label":"Width",
+      "default":"boxed",
+      "options":[
+        {
+          "value":"boxed",
+          "label":"Container"
+        },
+        {
+          "value":"full",
+          "label":"Full Width"
+        }
+      ]
+    },
+
+    {
+      "type":"select",
+      "id":"layout_tag",
+      "label":"HTML Tag",
+      "default":"section",
+      "options":[
+        {
+          "value":"section",
+          "label":"section"
+        },
+        {
+          "value":"div",
+          "label":"div"
+        },
+        {
+          "value":"article",
+          "label":"article"
+        },
+        {
+          "value":"main",
+          "label":"main"
+        }
+      ]
+    },
+
+    {
+      "type":"header",
+      "content":"Background"
+    },
+
+    {
+      "type":"color",
+      "id":"background_color",
+      "label":"Background Color"
+    },
+
+    {
+      "type":"color_background",
+      "id":"background_gradient",
+      "label":"Background Gradient"
+    },
+
+    {
+      "type":"header",
+      "content":"Padding"
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_top",
+      "label":"Top",
+      "min":0,
+      "max":300,
+      "step":2,
+      "default":60,
+      "unit":"px"
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_right",
+      "label":"Right",
+      "min":0,
+      "max":300,
+      "step":2,
+      "default":20,
+      "unit":"px"
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_bottom",
+      "label":"Bottom",
+      "min":0,
+      "max":300,
+      "step":2,
+      "default":60,
+      "unit":"px"
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_left",
+      "label":"Left",
+      "min":0,
+      "max":300,
+      "step":2,
+      "default":20,
+      "unit":"px"
+    },
+
+    {
+      "type":"header",
+      "content":"Mobile Padding"
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_top_mobile",
+      "label":"Top",
+      "min":0,
+      "max":200,
+      "step":2,
+      "default":40
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_right_mobile",
+      "label":"Right",
+      "min":0,
+      "max":100,
+      "step":2,
+      "default":16
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_bottom_mobile",
+      "label":"Bottom",
+      "min":0,
+      "max":200,
+      "step":2,
+      "default":40
+    },
+
+    {
+      "type":"range",
+      "id":"spacing_padding_left_mobile",
+      "label":"Left",
+      "min":0,
+      "max":100,
+      "step":2,
+      "default":16
+    },
+
+    {
+      "type":"header",
+      "content":"Advanced"
+    },
+
+    {
+      "type":"text",
+      "id":"advanced_class",
+      "label":"Custom Class"
+    }
+
+  ],
+  "presets":[
+    {
+      "name":"Lumen Section"
+    }
+  ]
+}
+{% endschema %}
